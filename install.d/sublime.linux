@@ -1,0 +1,7 @@
+#!/bin/zsh
+sudo mkdir /opt
+sudo curl "http://c758482.r82.cf2.rackcdn.com/sublime_text_3_build_3083_x32.tar.bz2"|tar xj -C /opt
+sudo ln -s /opt/Sublime\ Text\ 3/sublime_text /usr/bin/sublime
+mkdir -p "~/.config/sublime-text-3/Local" "~/.config/sublime-text-3/Packages/User" "~/.config/sublime-text-3/Installed Packages"
+cp $DOTFILES/config/Preferences.sublime-settings $DOTFILES/config/Package\ Control.sublime-settings "~/.config/sublime-text-3/Package/User/"
+curl -o "~/.config/sublime-text-3/Installed Packages/Package Control.sublime-package" "https://packagecontrol.io/Package%20Control.sublime-package"

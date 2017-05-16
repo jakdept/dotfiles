@@ -1,0 +1,44 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+		"Fix Mac Path"
+	],
+	"installed_packages":
+	[
+		"BracketHighlighter",
+		"Clipboard Manager",
+		"Color Highlighter",
+		"Colorcoder",
+		"DocBlockr",
+		"Fix Mac Path",
+		"Git",
+		"GitGutter",
+		"Glue",
+		"GoImports",
+		"Golang Build",
+		"GoSublime",
+		"HTML-CSS-JS Prettify",
+		"HTMLBeautify",
+		"Javascript Beautify",
+		"JsFormat",
+		"LiveStyle",
+		"LPrint",
+		"Package Control",
+		"Pretty JSON",
+		"sublimelint",
+		"Theme - Asphalt",
+		"Theme - Brogrammer",
+		"Theme - itg.flat",
+		"Theme - Nil",
+		"Theme - Numix",
+		"Theme - Spaceblack",
+		"Theme - Spacefunk",
+		"Theme - Spacegray",
+		"Theme - Superman",
+		"Theme - Tech49",
+		"Theme - Vim Blackboard",
+		"Vintageous",
+		"Warp-OS Color Scheme"
+	]
+}

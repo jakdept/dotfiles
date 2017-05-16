@@ -1,0 +1,43 @@
+# Sample gitconfig
+#
+
+[push]
+	default = current
+[pull]
+	default = current
+
+[hub]
+	protocol = https
+[user]
+	name = Jack Hayhurst
+	email = James.A.Hayhurst@gmail.com
+[credential]
+	helper = GIT_CREDENTIAL_HELPER
+[alias]
+	count   = !git shortlog -sn
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	ui = true
+[diff]
+	tool = vimdiff
+[merge]
+	tool = vimdiff]
+[difftool]
+	prompt = false
+[url "git@github.com:"]
+	insteadOf https://github.com/
+[core]
+	excludesfile = ~/.gitignore
+	editor = vim
+[apply]
+	whitespace = nowarn
+[mergetool]
+	keepBackup = false
+[help]
+	autocorrect = 1
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process

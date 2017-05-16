@@ -1,0 +1,10 @@
+#!/bin/zsh
+curl http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%20Build%203083.dmg -o ~/Downloads/sublime.dmg
+hdiutil attach ~/Downloads/sublime.dmg
+sudo cp -R /Volumes/Sublime\ Text/Sublime\ Text.app /Applications
+hdiutil unmount -whole -force $(hdiutil info|awk '/Sublime Text/ {print $1}')
+rm ~/Downloads/sublime.dmg
+mkdir -p "~/Library/Application\ Support/Sublime Text 3/Local" "~/Library/Application\ Support/Sublime Text 3/Packages/User" "~/Library/Application\ Support/Sublime Text 3/Installed Packages"
+cp $DOTFILES/config/Preferences.sublime-settings $DOTFILES/config/Package\ Control.sublime-settings "~/Library/Application\ Support/Sublime Text 3/Package/User/"
+curl -o "~/Library/Application\ Support/Sublime Text 3/Installed Packages/Package Control.sublime-package" "https://packagecontrol.io/Package%20Control.sublime-package"
+ln -s  "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl

@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+#
+# Run all dotfiles installers.
+
+set -euf -o pipefail
+
+DOTFILES=~/dotfiles
+mkdir -p ${DOTFILES}
+#DOTFILES=$(cd "$( dirname "${0}" )/.." && pwd)
+
+source ${DOTFILES}/script/functions
+
+echo ''
+
+run_installers
+
+install_dotfiles
+
+echo ''
+echo '  All installed!'

@@ -1,0 +1,92 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "go.formatOnSave": true,
+    "go.formatTool": "goreturns",
+    "go.buildOnSave": true,
+    // Run Lint tool on save.
+    "go.lintOnSave": true,
+    // Specifies Lint tool name.
+    "go.lintTool": "gometalinter",
+    // https://github.com/alecthomas/gometalinter#supported-linters
+    "go.lintFlags": [
+        "--disable-all",
+        "--enable=vet",
+        // "--enable=deadcode",
+        "--enable=golint",
+        // "--enable=varcheck",
+        // "--enable=structcheck",
+        // "--enable=errcheck",
+        "--enable=ineffassign",
+        "--enable=interfacer",
+        // "--enable=unconvert",
+        "--enable=goconst",
+        "--enable=gosimple",
+        "--enable=staticcheck",
+        "--enable=goconst",
+        // "--enable=lll",
+        "--line-length=80",
+        "--enable=misspell"
+        // "--enable=unused"
+    ],
+    "go.vetOnSave": true,
+    "go.coverOnSave": true,
+    "go.goroot": "/usr/local/go",
+    "go.gopath": "/Users/jack/go",
+    "editor.rulers": [
+        80,
+        140
+    ],
+    "editor.fontFamily": "Hack, Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontSize": 12,
+    "terminal.integrated.fontFamily": "Hack, Menlo, Monaco, Consolas, \"Droid Sans Mono\", \"Courier New\", monospace, \"Droid Sans Fallback\"",
+    "editor.tabSize": 2,
+    "window.zoomLevel": 0,
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "python.pythonPath": "python3.5",
+    "python.formatting.formatOnSave": false,
+    "files.autoSave": "onFocusChange",
+    "window.menuBarVisibility": "toggle",
+    "editor.wordWrap": "off",
+    "workbench.colorTheme": "WarpOS",
+    "markdown.preview.doubleClickToSwitchToEditor": false,
+    "vim.otherModesKeyBindingsNonRecursive": [{
+            "before": ["Z", "Z"],
+            "after": [],
+            "commands": [{
+                    "command": "workbench.action.files.save",
+                    "args": []
+                },
+                {
+                    "command": "workbench.action.closeActiveEditor",
+                    "args": []
+                }
+            ]
+        },
+        {
+            "before": ["<C-b>"],
+            "after": [],
+            "commands": [{
+                "command": "workbench.action.toggleSidebarVisibility",
+                "args": []
+            }]
+        },
+        {
+            "before": ["<C-s>"],
+            "after": [],
+            "commands": [{
+                "command": "workbench.action.files.save",
+                "args": []
+            }]
+        },
+        {
+            "before": ["<C-w>"],
+            "after": [],
+            "commands": [{
+                "command": "workbench.action.closeActiveEditor",
+                "args": []
+            }]
+        }
+    ]
+
+}

@@ -1,0 +1,6 @@
+#!/bin/sh
+curl https://dl.google.com/chrome/mac/stable/GGRO/googlechrome.dmg -o ~/Downloads/chrome.dmg
+hdiutil attach ~/Downloads/chrome.dmg
+sudo cp -R /Volumes/Google\ Chrome/Google\ Chrome.app /Applications
+hdiutil unmount -whole -force $(hdiutil info|awk '/Google Chrome/ {print $1}')
+rm ~/Downloads/chrome.dmg

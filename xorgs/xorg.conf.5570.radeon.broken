@@ -1,0 +1,121 @@
+
+Section "Module"
+EndSection
+
+Section "Device"
+	Identifier	"ATI 5770-0"
+	Driver			"radeon"
+	BusID				"PCI:1:0:0"
+	Screen			0
+EndSection
+
+
+Section "Monitor"
+	Identifier	"0-DFP1"
+	Option		"ModelName" "HP ZR2740w"
+	Option		"DPMS" "true"
+#	Option		"PreferredMode" "2560x1440"
+EndSection
+
+Section "Screen"
+	Identifier	"lefty"
+	Device			"ATI 5770-0"
+	Monitor			"0-DFP1"
+	DefaultDepth     24
+#	SubSection "Display"
+#		Viewport   0 0
+#		Depth     24
+#		Virtual 2560 1440
+#	EndSubSection
+EndSection
+
+# Section "Device"
+# 	Identifier	"ATI 5770-1"
+# 	Driver			"radeon"
+# 	BusID				"PCI:1:0:0"
+# 	Screen			1
+# EndSection
+
+# Section "Monitor"
+# 	Identifier	"0-DFP2"
+# 	Option		"VendorName" "ATI Proprietary Driver"
+# 	Option		"ModelName" "Generic Autodetecting Monitor"
+# 	Option		"DPMS" "true"
+# 	Option		"PreferredMode" "1920x1080"
+# 	Option		"Rotate" "left"
+# 	Option		"RightOf" "0-DFP1"
+# EndSection
+
+# Section "Screen"
+# 	Identifier	"lefty"
+# 	Device			"ATI 5770-1"
+# 	Monitor			"0-DFP1"
+# 	DefaultDepth     24
+# 	SubSection "Display"
+# 		Viewport   0 0
+# 		Depth     24
+# 		Virtual 6000 4000
+# 	EndSubSection
+# EndSection
+
+Section "Device"
+	Identifier	"ATI 5770-2"
+	Driver			"radeon"
+	BusID				"PCI:1:0:0"
+	Screen			2
+EndSection
+
+Section "Monitor"
+	Identifier	"0-DFP4"
+	Option		"ModelName" "HP LA2405wg"
+	Option		"DPMS" "true"
+#	Option		"PreferredMode" "1920x1200"
+#	Option		"Rotate" "left"
+EndSection
+
+Section "Screen"
+	Identifier	"middle"
+	Device			"ATI 5770-2"
+	Monitor			"0-DFP4"
+	DefaultDepth     24
+#	SubSection "Display"
+#		Viewport   0 0
+#		Depth     24
+#		Virtual 6000 4000
+#	EndSubSection
+EndSection
+
+Section "Device"
+	Identifier	"ATI 5770-3"
+	Driver			"radeon"
+	BusID				"PCI:1:0:0"
+	Screen			3
+EndSection
+
+Section "Monitor"
+	Identifier	"0-DFP3"
+	Option		"ModelName" "HP LA2405wg"
+	Option		"DPMS" "true"
+#	Option		"PreferredMode" "1920x1200"
+#	Option		"Rotate" "left"
+EndSection
+
+Section "Screen"
+	Identifier	"righty"
+	Device			"ATI 5770-3"
+	Monitor			"0-DFP3"
+	DefaultDepth     24
+#	SubSection "Display"
+#		Viewport   0 0
+#		Depth     24
+#		Virtual 6000 4000
+#	EndSubSection
+EndSection
+
+Section "ServerLayout"
+	Identifier     "aticonfig Layout"
+	Screen      0  "lefty"
+	Screen      1  "middle" RightOf "lefty"
+	Screen      2  "righty" RightOf "middle"
+EndSection
+

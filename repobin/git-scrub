@@ -1,0 +1,6 @@
+#!/bin/sh
+#
+# Use the last commit message and amend your stuffs.
+
+git branch --merged | grep -v master | xargs git branch -d
+git fetch --all --prune

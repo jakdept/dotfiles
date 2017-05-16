@@ -1,0 +1,4 @@
+#!/bin/sh
+apt-get install terminator
+mkdir -p ~/.config/terminator
+ln -s ~/dotfiles/config/terminator_config ~/.config/terminator/config

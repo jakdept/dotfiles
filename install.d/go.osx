@@ -1,0 +1,2 @@
+#!/bin/sh
+/usr/bin/curl -s -S -L https://storage.googleapis.com/golang/go1.8.1.darwin-amd64.tar.gz|tar xz -C /usr/local

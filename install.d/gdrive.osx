@@ -1,0 +1,6 @@
+#!/bin/sh
+curl https://dl.google.com/drive/installgoogledrive.dmg -o ~/Downloads/drive.dmg
+hdiutil attach ~/Downloads/drive.dmg
+sudo cp -R /Volumes/Install\ Google\ Drive/Google\ Drive.app /Applications
+hdiutil unmount -whole -force $(hdiutil info|awk '/Install\ Google Drive/ {print $1}')
+rm ~/Downloads/drive.dmg

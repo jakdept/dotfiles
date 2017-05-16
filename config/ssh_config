@@ -1,0 +1,71 @@
+Host *
+	#XAuthLocation /opt/X11/bin/xauth
+	#SendEnv LANG LC_*
+	SendEnv LANG=en_US.UTF-8
+	#Value below in seconds.
+	ServerAliveInterval 30
+	#Value below is the number of times ServerAliveInterval is done per session.
+	ServerAliveCountmax 1200
+
+Host jack.wks jack jack.wks.liquidweb.com
+	Hostname 10.30.4.19
+	HashKnownHosts yes
+	GSSAPIAuthentication yes
+	GSSAPIDelegateCredentials no
+	Port 22
+	User jack
+	Protocol 2
+	IdentityFile ~/.ssh/local.key
+	StrictHostKeyChecking ask
+
+Host lol.deeteos.com lol
+	Hostname lol.deleteos.com
+	HashKnownHosts yes
+	GSSAPIAuthentication yes
+	GSSAPIDelegateCredentials no
+	Port 22
+	User jack
+	Protocol 2
+	IdentityFile ~/.ssh/local.key
+	StrictHostKeyChecking ask
+
+Host wiki wiki2 wiki2.hostbaitor.com
+	Hostname wiki2.hostbaitor.com
+	HashKnownHosts yes
+	GSSAPIAuthentication yes
+	GSSAPIDelegateCredentials no
+	Port 22
+	User root
+	Protocol 2
+	IdentityFile ~/.ssh/local.key
+	StrictHostKeyChecking ask
+
+Host git.liquidweb.com
+	Hostname git.liquidweb.com
+	HashKnownHosts yes
+	GSSAPIAuthentication yes
+	GSSAPIDelegateCredentials no
+	Port 22
+	User git
+	Protocol 2
+	IdentityFile ~/.ssh/local.key
+	StrictHostKeyChecking ask
+
+Host github github.com
+	Hostname github.com
+	HashKnownHosts yes
+	GSSAPIAuthentication yes
+	GSSAPIDelegateCredentials no
+	Port 22
+	User git
+	Protocol 2
+	IdentityFile ~/.ssh/local.key
+	StrictHostKeyChecking ask
+
+Host *
+	Port 22
+	User root
+	ControlPath ~/.ssh/.master-%r@%h:%p
+	ControlMaster auto
+	ControlPersist 1
+	StrictHostKeyChecking no

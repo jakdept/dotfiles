@@ -1,0 +1,27 @@
+{
+	"additional_path_items":
+	[
+		"/usr/local/Cellar/git/2.0.1/libexec/git-core",
+		"/usr/local/bin"
+	],
+	"color_scheme": "Packages/Warp-OS Color Scheme/WarpOS.tmTheme",
+	"font_size": 8.0,
+	"highlight_line": true,
+	"ignored_packages":
+	[
+		"Colorcoder",
+		"Fix Mac Path",
+		"HTML-CSS-JS Prettify",
+		"Vintage"
+	],
+	"margin": -1,
+	"open_files_in_new_window": false,
+	"original_color_scheme": "Packages/Warp-OS Color Scheme/WarpOS.tmTheme",
+	"rulers":
+	[
+		90
+	],
+	"tab_size": 2,
+	"vintage_start_in_command_mode": true,
+	"word_wrap": "true"
+}

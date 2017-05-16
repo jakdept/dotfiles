@@ -1,0 +1,5 @@
+#!/bin/sh
+sudo apt-get update
+sudo apt-get install i3
+mkdir -p ~/.i3
+ln -s ~/dotfiles/config/i3_config ~/.i3/config

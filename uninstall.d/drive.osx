@@ -1,0 +1,2 @@
+#!/bin/zsh
+sudo rm -rf "/Applications/Google Drive.app/"

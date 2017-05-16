@@ -1,0 +1,2 @@
+#!/bin/zsh
+nohup godoc -http :6060 &>/dev/null &

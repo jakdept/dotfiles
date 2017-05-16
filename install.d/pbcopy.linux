@@ -1,0 +1,15 @@
+#!/bin/sh
+
+mkdir ~/bin
+
+echo > ~/bin/pbcopy <<EOM
+#!/bin/sh
+xsel --clipboard --input
+EOM
+
+echo > ~/bin/pbpaste <<EOM
+#!/bin/sh
+xsel --clipboard --output
+EOM
+
+chmod 555 ~/bin/pbcopy ~/bin/pbpaste

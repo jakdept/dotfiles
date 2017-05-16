@@ -1,0 +1,3 @@
+#!/bin/sh
+# doing this because OSX makes /home and it's not a symlink and that's dumb
+ln -s /home /Users

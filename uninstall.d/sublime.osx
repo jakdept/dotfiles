@@ -1,0 +1,4 @@
+#!/bin/zsh
+sudo rm -rf "/Applications/Sublime Text.app/"
+rm -rf "~/Library/Application Support/Sublime Text 3/"
+unlink ~/bin/subl

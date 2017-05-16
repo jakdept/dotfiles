@@ -1,0 +1,70 @@
+
+Section "ServerLayout"
+	Identifier     "aticonfig Layout"
+	Screen      0  "aticonfig-Screen[0]-0" 0 0
+EndSection
+
+Section "Module"
+EndSection
+
+Section "Monitor"
+	Identifier	"0-DFP1"
+	Option		"VendorName" "ATI Proprietary Driver"
+	Option		"ModelName" "Generic Autodetecting Monitor"
+	Option		"DPMS" "true"
+	Option		"PreferredMode" "2560x1440"
+#	DisplaySize	600 340
+#	Option		"Rotate" "left"
+EndSection
+
+# Section "Monitor"
+# 	Identifier	"0-DFP2"
+# 	Option		"VendorName" "ATI Proprietary Driver"
+# 	Option		"ModelName" "Generic Autodetecting Monitor"
+# 	Option		"DPMS" "true"
+# 	Option		"PreferredMode" "1920x1080"
+# 	Option		"Rotate" "left"
+# 	Option		"RightOf" "0-DFP1"
+# EndSection
+
+Section "Monitor"
+	Identifier	"0-DFP4"
+	Option		"VendorName" "ATI Proprietary Driver"
+	Option		"ModelName" "Generic Autodetecting Monitor"
+	Option		"DPMS" "true"
+	Option		"PreferredMode" "1920x1200"
+	Option		"Rotate" "left"
+	Option		"RightOf" "0-DFP1"
+EndSection
+
+Section "Monitor"
+	Identifier	"0-DFP3"
+	Option		"VendorName" "ATI Proprietary Driver"
+	Option		"ModelName" "Generic Autodetecting Monitor"
+	Option		"DPMS" "true"
+	Option		"PreferredMode" "1920x1200"
+	Option		"Rotate" "left"
+	Option		"RightOf" "0-DFP4"
+EndSection
+
+Section "Device"
+	Identifier	"aticonfig-Device[0]-0"
+	Driver		"fglrx"
+	BusID		"PCI:1:0:0"
+	Option		"Monitor-DFP1" "0-DFP1"
+	Option		"Monitor-DFP2" "0-DFP2"
+	Option		"Monitor-DFP3" "0-DFP3"
+	Option		"Monitor-DFP4" "0-DFP4"
+EndSection
+
+Section "Screen"
+	Identifier "aticonfig-Screen[0]-0"
+	Device     "aticonfig-Device[0]-0"
+	Monitor    "aticonfig-Monitor[0]-0"
+	DefaultDepth     24
+	SubSection "Display"
+		Viewport   0 0
+		Depth     24
+		Virtual 6000 4000
+	EndSubSection
+EndSection
