@@ -1,3 +1,4 @@
 #!/bin/zsh
 open "https://code.visualstudio.com/docs?dv=osx"
-ln -sf ~/dotfiles/config/code_settings.json ~/Library/Application\ Support/Code/User/settings.json
+ln -sf ${DOTFILES}/config/code_settings.json ~/.config/Code/User/settings.json
+ln -sf ${DOTFILES}/config/code_keybindings.json ~/.config/Code/User/keybindings.json
