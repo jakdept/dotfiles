@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+# functions used to do things
+
+info () {
+  printf "  [ \033[00;34m..\033[0m ] $1"
+  }
+
+user () {
+  printf "\r  [ \033[0;33m?\033[0m ] $1 "
+  }
+
+success () {
+  printf "\r\033[2K  [ \033[00;32mOK\033[0m ] $1\n"
+}
+
+fail () {
+  printf "\r\033[2K  [\033[0;31mFAIL\033[0m] $1\n"
+  echo ''
+  exit
+}
+
+link_file () {
+  local src=$1 dst=$2
+  ln -s ${1} ${2} && success "linked $1 to $2"
+}
+
+install_dotfiles () {
+  info 'installing dotfiles'
+
+  local overwrite_all=false backup_all=false skip_all=false
+
+  for src in $(find -H "$DOTFILES/config" -maxdepth 1 -type f -name '*.symlink')
+  do
+    dst="$HOME/.$(basename "${src%.*}")"
+    link_file "$src" "$dst"
+  done
+}
+
+run_installers () {
+# find the installers and run them iteratively
+	if [ "$(uname -s)" == "Darwin" ]
+	then
+		find ${DOTFILES}/install.d -type f -maxdepth 1 -name "*.osx" | while read installer ; do sh -c "${installer}" ; done
+	fi
+
+	if [ "$(uname -s)" == "Linux" ]
+	then
+		find ${DOTFILES}/install.d -type f -maxdepth 1 -name "*.linux" | while read installer ; do sh -c "${installer}" ; done
+	fi
+
+	find ${DOTFILES}/install.d -type f -maxdepth 1 -name "*.all" | while read installer ; do sh -c "${installer}" ; done
+}

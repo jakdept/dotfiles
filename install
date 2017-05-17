@@ -5,10 +5,10 @@
 set -euf -o pipefail
 
 DOTFILES=~/dotfiles
-mkdir -p ${DOTFILES}
-#DOTFILES=$(cd "$( dirname "${0}" )/.." && pwd)
 
 source ${DOTFILES}/script/functions
+
+info '  Running manual installation'
 
 echo ''
 
