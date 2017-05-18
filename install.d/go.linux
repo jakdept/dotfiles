@@ -1,2 +1,3 @@
 #!/bin/sh
-/usr/bin/curl -s -S -L https://storage.googleapis.com/golang/go1.8.1.linux-amd64.tar.gz|sudo tar xz -C /usr/local
+GOVERSION=1.8.1
+/usr/bin/curl -s -S -L https://storage.googleapis.com/golang/go${GOVERSION}.linux-amd64.tar.gz|sudo tar xz -C /usr/local

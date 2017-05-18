@@ -37,7 +37,9 @@ install_dotfiles () {
 }
 
 run_installers () {
-# find the installers and run them iteratively
+  find ${DOTFILES}/install.d -type f -maxdepth 1 -name "*.all" | while read installer ; do sh -c "${installer}" ; done
+
+  # find the installers and run them iteratively
 	if [ "$(uname -s)" == "Darwin" ]
 	then
 		find ${DOTFILES}/install.d -type f -maxdepth 1 -name "*.osx" | while read installer ; do sh -c "${installer}" ; done
@@ -48,5 +50,4 @@ run_installers () {
 		find ${DOTFILES}/install.d -type f -maxdepth 1 -name "*.linux" | while read installer ; do sh -c "${installer}" ; done
 	fi
 
-	find ${DOTFILES}/install.d -type f -maxdepth 1 -name "*.all" | while read installer ; do sh -c "${installer}" ; done
 }
