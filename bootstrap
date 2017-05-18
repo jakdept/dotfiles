@@ -8,7 +8,9 @@ if [[ "$(uname -s)" == "Linux" ]]; then
 	sudo apt-get -y install git
 elif [[ "$(uname -s)" == "Darwin" ]]; then
 	# install xcode cli tools
-	xcode-select --install
+	git version
+	#xcode-select --install
+	read -n1 -r -p "If git works, press any key to continue..." key
 fi
 
 DOTFILES=~/dotfiles
