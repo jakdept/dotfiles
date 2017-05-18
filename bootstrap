@@ -2,16 +2,6 @@
 #
 # Run all dotfiles installers.
 
-
-if [[ "$(uname -s)" == "Linux" ]]; then
-	sudo apt-get -y install git
-elif [[ "$(uname -s)" == "Darwin" ]]; then
-	# install xcode cli tools
-	git version
-	#xcode-select --install
-	read -n1 -r -p "If git works, press any key to continue..." key
-fi
-
 DOTFILES=~/dotfiles
 
 git clone https://github.com/jakdept/dotfiles.git ${DOTFILES}

@@ -2,9 +2,9 @@
 #
 # Run all dotfiles installers.
 
-set -euf -o pipefail
-
 DOTFILES=~/dotfiles
+
+[[ ! -d ${DOTFILES} ]] && git clone https://github.com/jakdept/dotfiles.git ${DOTFILES}
 
 source ${DOTFILES}/script/functions
 
