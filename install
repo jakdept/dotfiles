@@ -6,7 +6,7 @@ DOTFILES=~/dotfiles
 
 [[ ! -d ${DOTFILES} ]] && git clone https://github.com/jakdept/dotfiles.git ${DOTFILES}
 
-source ${DOTFILES}/script/functions
+source ${DOTFILES}/functions
 
 info '  Running manual installation'
 
