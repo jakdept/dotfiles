@@ -1,0 +1,6 @@
+#!/bin/sh
+curl https://download.docker.com/mac/stable/Docker.dmg -o ~/Downloads/docker.dmg
+hdiutil attach ~/Downloads/docker.dmg
+sudo cp -R /Volumes/Docker/Docker.app /Applications
+hdiutil unmount -whole -force $(hdiutil info|awk '/Docker/ {print $1}')
+rm ~/Downloads/docker.dmg
