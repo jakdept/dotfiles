@@ -1,4 +1,4 @@
 #!/bin/zsh
-mkdir ~/.ssh
+mkdir -p ~/.ssh
 chmod 700 ~/.ssh
-ln -s $DOTFILES/config/ssh_config ~/.ssh/config
+ln -fs $DOTFILES/config/ssh_config ~/.ssh/config

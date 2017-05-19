@@ -2,7 +2,7 @@
 #
 # Run all dotfiles installers.
 
-DOTFILES=~/dotfiles
+export DOTFILES=~/dotfiles
 
 [[ ! -d ${DOTFILES} ]] && git clone https://github.com/jakdept/dotfiles.git ${DOTFILES}
 
