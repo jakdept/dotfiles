@@ -2,25 +2,19 @@
 #
 # Run all dotfiles installers.
 
-DOTFILES=~/dotfiles
+export DOTFILES=~/dotfiles
 
-git clone https://github.com/jakdept/dotfiles.git ${DOTFILES}
+[[ ! -d ${DOTFILES} ]] && git clone https://github.com/jakdept/dotfiles.git ${DOTFILES}
 
 source ${DOTFILES}/functions
 
-info '  Running automatic installation'
+info '  Running manual installation'
 
 echo ''
 
 run_installers
 
 install_dotfiles
-
-GIT_DIR=${DOTFILES}/.git
-GIT_WORK_TREE=${DOTFILES}
-git remote set-url origin git@github.com:jakdept/dotfiles.git
-unset GIT_DIR
-unset GIT_WORK_TREE
 
 echo ''
 echo '  All installed!'
