@@ -37,17 +37,29 @@ install_dotfiles () {
 }
 
 run_installers () {
-  find ${DOTFILES}/install.d -type f -maxdepth 1 -name "*.all" | while read installer ; do sh -c "${installer}" ; done
+  find ${DOTFILES}/install.d -type f -maxdepth 1 -name "*.all" | \
+		while read installer ; do
+			info "installing ${installer}"
+			sh -c "${installer}" ; 
+		done
 
   # find the installers and run them iteratively
 	if [ "$(uname -s)" == "Darwin" ]
 	then
-		find ${DOTFILES}/install.d -type f -maxdepth 1 -name "*.osx" | while read installer ; do sh -c "${installer}" ; done
+		find ${DOTFILES}/install.d -type f -maxdepth 1 -name "*.osx" | \
+		while read installer ; do 
+			info "installing ${installer}"
+			sh -c "${installer}" ;
+		done
 	fi
 
 	if [ "$(uname -s)" == "Linux" ]
 	then
-		find ${DOTFILES}/install.d -type f -maxdepth 1 -name "*.linux" | while read installer ; do sh -c "${installer}" ; done
+		find ${DOTFILES}/install.d -type f -maxdepth 1 -name "*.linux" | \
+		while read installer ; do 
+			info "installing ${installer}"
+			sh -c "${installer}" ;
+		done
 	fi
 
 }
@@ -55,6 +67,8 @@ run_installers () {
 osx_post_install () {
 	dockutil --list| \
 		grep -v "file:///Users/jack/Downloads"| \
-		awk '{print "dockutil --remove \"" $1 "\""}'| \
-		bash
+		awk '{OFS="\t"; $(NF)=$(NF-1)=$(NF-2)=""; print $0}'| \
+		xargs -L1 -I{} dockutil --remove "{}"
+
+	dockutil --add '/Applications' --display folder
 }

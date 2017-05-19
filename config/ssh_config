@@ -7,60 +7,15 @@ Host *
 	#Value below is the number of times ServerAliveInterval is done per session.
 	ServerAliveCountmax 1200
 
-Host jack.wks jack jack.wks.liquidweb.com
-	Hostname 10.30.4.19
-	HashKnownHosts yes
-	GSSAPIAuthentication yes
-	GSSAPIDelegateCredentials no
-	Port 22
-	User jack
-	Protocol 2
-	IdentityFile ~/.ssh/local.key
-	StrictHostKeyChecking ask
-
-Host lol.deeteos.com lol
-	Hostname lol.deleteos.com
-	HashKnownHosts yes
-	GSSAPIAuthentication yes
-	GSSAPIDelegateCredentials no
-	Port 22
-	User jack
-	Protocol 2
-	IdentityFile ~/.ssh/local.key
-	StrictHostKeyChecking ask
-
-Host wiki wiki2 wiki2.hostbaitor.com
-	Hostname wiki2.hostbaitor.com
-	HashKnownHosts yes
-	GSSAPIAuthentication yes
-	GSSAPIDelegateCredentials no
-	Port 22
-	User root
-	Protocol 2
-	IdentityFile ~/.ssh/local.key
-	StrictHostKeyChecking ask
-
-Host git.liquidweb.com
-	Hostname git.liquidweb.com
-	HashKnownHosts yes
-	GSSAPIAuthentication yes
-	GSSAPIDelegateCredentials no
-	Port 22
-	User git
-	Protocol 2
-	IdentityFile ~/.ssh/local.key
-	StrictHostKeyChecking ask
-
-Host github github.com
-	Hostname github.com
-	HashKnownHosts yes
-	GSSAPIAuthentication yes
-	GSSAPIDelegateCredentials no
-	Port 22
-	User git
-	Protocol 2
-	IdentityFile ~/.ssh/local.key
-	StrictHostKeyChecking ask
+# Added by Kryptonite
+Host jack.wks jack.wks.liquidweb.com lol lol.deleteos.com wiki wiki2 wiki2.hostbaitor.com git.liquidweb.com github github.com
+	PKCS11Provider /usr/local/lib/kr-pkcs11.so
+	ProxyCommand /usr/local/bin/krssh %h %p
+	IdentityFile ~/.ssh/id_kryptonite
+	IdentityFile ~/.ssh/id_ed25519
+	IdentityFile ~/.ssh/id_rsa
+	IdentityFile ~/.ssh/id_ecdsa
+	IdentityFile ~/.ssh/id_dsa
 
 Host *
 	Port 22
