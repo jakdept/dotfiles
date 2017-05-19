@@ -1,4 +1,17 @@
 #!/bin/zsh
 open "https://code.visualstudio.com/docs?dv=osx"
-ln -sf ${DOTFILES}/config/code_settings.json ~/.config/Code/User/settings.json
-ln -sf ${DOTFILES}/config/code_keybindings.json ~/.config/Code/User/keybindings.json
+
+echo 'after download is complete, press any key'
+read
+
+unzip VSCode-darwin-stable.zip
+sudo cp -R ~/Downloads/Visual\ Studio\ Code.app /Applications
+rm ~/Downloads/VsCode-darwin-stable.zip
+rm ~/Downloads/Visual Studio Code.app
+
+ln -sf ${DOTFILES}/config/code_settings.json ~/Library/Application Support/Code/User/settings.json
+ln -sf ${DOTFILES}/config/code_keybindings.json ~/Library/Application Support/Code/User/keybindings.json
+ln -sf '/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code' /usr/local/bin/code
+
+code --install-extension ms-vscode.cpptools
+
