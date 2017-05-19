@@ -1,3 +1,16 @@
 #!/bin/sh
 GOVERSION=1.8.1
-/usr/bin/curl -s -S -L https://storage.googleapis.com/golang/go${goversion}.darwin-amd64.tar.gz|sudo tar xz -C /usr/local
+GOSRC=/usr/local
+rm -rf ${GOSRC}
+/usr/bin/curl -s -S -L https://storage.googleapis.com/golang/go${goversion}.darwin-amd64.tar.gz|sudo tar xz -C ${GOSRC}
+
+
+	go get github.com/golang/lint/golint
+	go get golang.org/x/tools/cmd/cover
+	go get golang.org/x/tools/cmd/goimports
+	go get golang.org/x/tools/cmd/gorename
+	go get golang.org/x/tools/cmd/guru
+
+	go get github.com/davecheney/httpstat
+	go get github.com/google/gops
+	go get github.com/shurcooL/markdownfmt
