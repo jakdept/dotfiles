@@ -1,2 +1,0 @@
-#!/bin/bash
-dockutil --list|grep -v "file:///Users/jack/Downloads"|awk '{print "dockutil --remove \"" $1 "\""}'|bash

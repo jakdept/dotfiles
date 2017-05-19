@@ -27,7 +27,7 @@
 [difftool]
 	prompt = false
 [url "git@github.com:"]
-	insteadOf https://github.com/
+	insteadOf = https://github.com/
 [core]
 	excludesfile = ~/.gitignore
 	editor = vim

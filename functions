@@ -51,3 +51,10 @@ run_installers () {
 	fi
 
 }
+
+osx_post_install () {
+	dockutil --list| \
+		grep -v "file:///Users/jack/Downloads"| \
+		awk '{print "dockutil --remove \"" $1 "\""}'| \
+		bash
+}

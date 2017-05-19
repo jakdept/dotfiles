@@ -1,0 +1,6 @@
+#!/bin/bash
+curl https://github.com/keepassxreboot/keepassxc/releases/download/2.1.4/KeePassXC-2.1.4.dmg -o ~/DOwnloads/keepassxc.dmg
+hdiutil attach ~/Downloads/keepassxc.dmg
+sudo cp -R /Volumes/KeePassXC/KeePassXC.app /Applications
+hdiutil unmount -whole -force $(hdiutil info|awk '/KeePassXC/ {print $1}')
+rm ~/Downloads/keepassxc.dmg
