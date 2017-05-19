@@ -4,7 +4,23 @@ Your dotfiles are how you personalize your system. These are mine.
 
 ## install
 
-For now, download the repo, unpack it somewhere, and run the install script.
+On Linux, first you gotta get git or something.
+
+```
+apt-get install git
+```
+
+On OSX install XCode CLI tools for git:
+
+```
+xcode-select --install
+```
+
+Finally run the following - there will be some prompts
+
+```
+curl https://raw.githubusercontent.com/jakdept/dotfiles/master/install | bash
+```
 
 ## components
 
