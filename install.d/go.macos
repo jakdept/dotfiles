@@ -2,6 +2,8 @@
 
 # go should already be installed, so install a bunch of binaries
 
+brew install go
+
 mkdir -p ~/go/src ~/go/bin
 
 echo ''
