@@ -65,10 +65,12 @@ run_installers () {
 }
 
 osx_post_install () {
-	dockutil --list| \
-		grep -v "file:///Users/jack/Downloads"| \
-		awk '{OFS="\t"; $(NF)=$(NF-1)=$(NF-2)=""; print $0}'| \
-		xargs -L1 -I{} dockutil --remove "{}"
+	# empty the dock
+	dockutil --list | rev | cut -f4- | rev | xargs -L1 dockutil --remove
 
+	# add applications folder to dock
 	dockutil --add '/Applications' --display folder
+
+	# add downloads folder to dock
+	dockutil --add "/Users/${username}/Downloads" --display stack
 }
