@@ -1,2 +1,3 @@
 #!/bin/bash
-brew install caskroom/fonts/font-hack
+brew tap caskroom/fonts
+brew install font-hack font-hack
