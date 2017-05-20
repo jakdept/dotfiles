@@ -1,2 +1,40 @@
 #!/bin/zsh
+
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+declare -a tapLocations=(
+  "caskroom/cask"
+  "caskroom/fonts"
+  "homebrew/core"
+)
+
+declare -a install=(
+  "mas"
+  "dockutil"
+  "tmpwatch"
+  "tmux"
+  "docker"
+  "go"
+  "wget"
+)
+
+declare -a caskInstall=(
+  "google-chrome"
+  "caffeine"
+  "font-hack"
+  "slack"
+  "keepassxc"
+  "visual-studio-code"
+)
+
+for each in "${tapLocations[@]}"; do
+  brew tap $each
+done
+
+for each in "${install[@]}"; do
+  brew install $each
+done
+
+for each in "${caskInstall[@]}"; do
+  brew cask install $each
+done
