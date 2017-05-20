@@ -88,6 +88,6 @@
                 "args": []
             }]
         }
-    ]
-
+    ],
+    "workbench.iconTheme": "material-icon-theme"
 }
