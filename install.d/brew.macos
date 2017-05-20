@@ -18,6 +18,7 @@ declare -a install=(
   "netcat"
   "netcat6"
   "mycli"
+  "mtr"
 )
 
 declare -a caskInstall=(
@@ -25,7 +26,6 @@ declare -a caskInstall=(
   "font-hack"
   "slack"
   "keepassxc"
-  "visual-studio-code"
 )
 
 for each in "${tapLocations[@]}"; do

@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+# empties out all of the crap from the dock
+
 brew install dockutil
 
 echo ''

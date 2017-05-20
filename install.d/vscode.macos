@@ -1,10 +1,13 @@
 #!/bin/zsh
 
+# installs vscode (my editor of choice), links my config files, and sets it up how i like
+
+brew cask install visual-studio-code
+
 mkdir -p ~/Library/Application\ Support/Code/User/
 ln -sf ${DOTFILES}/config/code_settings.json ~/Library/Application\ Support/Code/User/settings.json
 ln -sf ${DOTFILES}/config/code_keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
 ln -sf '/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code' /usr/local/bin/code
-
 
 code --install-extension gerane.Theme-WarpOS
 code --install-extension PKief.material-icon-theme

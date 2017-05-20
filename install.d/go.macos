@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# go should already be installed, so install a bunch of binaries
+# installs golang, and installs a bunch of binaries i like
 
 brew install go
 
@@ -8,9 +8,7 @@ mkdir -p ~/go/src ~/go/bin
 
 echo ''
 
-info "installing a bunch of go binaries"
-
-echo ''
+info "installing a bunch of go binaries\n"
 
 go get github.com/golang/lint/golint
 go get golang.org/x/tools/cmd/cover
@@ -22,8 +20,24 @@ go get github.com/davecheney/httpstat
 go get github.com/google/gops
 go get github.com/shurcooL/markdownfmt
 
+go get github.com/nsf/gocode
+go get github.com/rogpeppe/godef
+go get github.com/zmb3/gogetdoc
+go get github.com/golang/lint/golint
+go get github.com/ramya-rao-a/go-outline
+go get sourcegraph.com/sqs/goreturns
+go get golang.org/x/tools/cmd/gorename
+go get github.com/tpng/gopkgs
+go get github.com/acroca/go-symbols
+go get golang.org/x/tools/cmd/guru
+go get github.com/cweill/gotests/...
+go get golang.org/x/tools/cmd/godoc
+go get github.com/fatih/gomodifytags
+
 echo ''
+
+info "installing delve\n"
+
+brew install go-delve/delve/delve
 
 info "finished installing go binaries"
-
-echo ''
