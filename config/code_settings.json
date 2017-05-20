@@ -47,6 +47,7 @@
     "python.formatting.formatOnSave": false,
     "files.autoSave": "onFocusChange",
     "window.menuBarVisibility": "toggle",
+    "git.autofetch": false,
     "editor.wordWrap": "off",
     "workbench.colorTheme": "WarpOS",
     "markdown.preview.doubleClickToSwitchToEditor": false,
