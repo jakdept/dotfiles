@@ -39,17 +39,19 @@ install_dotfiles () {
 run_installers () {
   find ${DOTFILES}/install.d -type f -maxdepth 1 -name "*.all" | \
 		while read installer ; do
-			info "installing ${installer}"
-			sh -c "${installer}" ; 
+			info "installing ${installer}\n"
+			source "${installer}" ; 
+			echo ''
 		done
 
   # find the installers and run them iteratively
 	if [ "$(uname -s)" == "Darwin" ]
 	then
-		find ${DOTFILES}/install.d -type f -maxdepth 1 -name "*.osx" | \
+		find ${DOTFILES}/install.d -type f -maxdepth 1 -name "*.macos" | \
 		while read installer ; do 
-			info "installing ${installer}"
-			sh -c "${installer}" ;
+			info "installing ${installer} \n";
+			source "${installer}" ;
+			echo '';
 		done
 	fi
 
@@ -57,20 +59,10 @@ run_installers () {
 	then
 		find ${DOTFILES}/install.d -type f -maxdepth 1 -name "*.linux" | \
 		while read installer ; do 
-			info "installing ${installer}"
-			sh -c "${installer}" ;
+			info "installing ${installer}\n"
+			source "${installer}" ;
+			echo ''
 		done
 	fi
 
-}
-
-osx_correct_dock () {
-	# empty the dock
-	dockutil --list | rev | cut -f4- | rev | xargs -L1 dockutil --remove
-
-	# add applications folder to dock
-	dockutil --add '/Applications' --display folder
-
-	# add downloads folder to dock
-	dockutil --add "/Users/${username}/Downloads" --display stack
 }

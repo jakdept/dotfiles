@@ -1,0 +1,18 @@
+#!/bin/zsh
+
+brew install dockutil
+
+echo ''
+
+info "modifying the dock"
+
+# empty the dock
+dockutil --list | rev | cut -f4- | rev | xargs -L1 dockutil --remove
+
+# add applications folder to dock
+dockutil --add '/Applications' --display folder
+
+# add downloads folder to dock
+dockutil --add "/Users/${username}/Downloads" --display stack
+
+echo ''
