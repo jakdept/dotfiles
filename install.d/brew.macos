@@ -10,7 +10,6 @@ declare -a tapLocations=(
 
 declare -a install=(
   "mas"
-  "dockutil"
   "tmpwatch"
   "tmux"
   "docker"
