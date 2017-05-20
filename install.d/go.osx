@@ -1,7 +1,7 @@
 #!/bin/sh
 GOVERSION=1.8.1
 GOSRC=/usr/local
-rm -rf ${GOSRC}
+sudo rm -rf ${GOSRC}/go
 /usr/bin/curl -s -S -L https://storage.googleapis.com/golang/go${goversion}.darwin-amd64.tar.gz|sudo tar xz -C ${GOSRC}
 
 
