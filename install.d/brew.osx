@@ -15,11 +15,14 @@ declare -a install=(
   "tmux"
   "docker"
   "go"
+  "gnu-sed"
   "wget"
+  "netcat"
+  "netcat6"
+  "mycli"
 )
 
 declare -a caskInstall=(
-  "google-chrome"
   "caffeine"
   "font-hack"
   "slack"

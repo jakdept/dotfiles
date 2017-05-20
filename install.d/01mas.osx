@@ -1,3 +1,0 @@
-#!/bin/bash
-# mas is a CLI for the app store
-brew install mas

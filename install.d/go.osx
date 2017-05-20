@@ -1,16 +1,27 @@
 #!/bin/sh
-GOVERSION=1.8.1
-GOSRC=/usr/local
-sudo rm -rf ${GOSRC}/go
-/usr/bin/curl -s -S -L https://storage.googleapis.com/golang/go${goversion}.darwin-amd64.tar.gz|sudo tar xz -C ${GOSRC}
 
+# go should already be installed, so install a bunch of binaries
 
-	go get github.com/golang/lint/golint
-	go get golang.org/x/tools/cmd/cover
-	go get golang.org/x/tools/cmd/goimports
-	go get golang.org/x/tools/cmd/gorename
-	go get golang.org/x/tools/cmd/guru
+mkdir -p ~/go/src ~/go/bin
 
-	go get github.com/davecheney/httpstat
-	go get github.com/google/gops
-	go get github.com/shurcooL/markdownfmt
+echo ''
+
+info "installing a bunch of go binaries"
+
+echo ''
+
+go get github.com/golang/lint/golint
+go get golang.org/x/tools/cmd/cover
+go get golang.org/x/tools/cmd/goimports
+go get golang.org/x/tools/cmd/gorename
+go get golang.org/x/tools/cmd/guru
+
+go get github.com/davecheney/httpstat
+go get github.com/google/gops
+go get github.com/shurcooL/markdownfmt
+
+echo ''
+
+info "finished installing go binaries"
+
+echo ''
