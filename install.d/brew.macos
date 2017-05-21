@@ -2,40 +2,25 @@
 
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-declare -a tapLocations=(
-  "caskroom/cask"
-  "caskroom/fonts"
-  "homebrew/core"
-)
+brew tap \
+  caskroom/cask \
+  caskroom/fonts \
+  homebrew/core
 
-declare -a install=(
-  "mas"
-  "tmpwatch"
-  "tmux"
-  "docker"
-  "gnu-sed"
-  "wget"
-  "netcat"
-  "netcat6"
-  "mycli"
-  "mtr"
-)
+brew install \
+  mas \
+  tmpwatch \
+  tmux \
+  docker \
+  gnu-sed \
+  wget \
+  netcat \
+  netcat6 \
+  mycli \
+  mtr
 
-declare -a caskInstall=(
-  "caffeine"
-  "font-hack"
-  "slack"
-  "keepassxc"
-)
-
-for each in "${tapLocations[@]}"; do
-  brew tap $each
-done
-
-for each in "${install[@]}"; do
-  brew install $each
-done
-
-for each in "${caskInstall[@]}"; do
-  brew cask install $each
-done
+brew cask install
+  caffeine \
+  font-hack \
+  slack \
+  keepassxc
