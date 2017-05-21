@@ -1,6 +1,17 @@
 #!/bin/zsh
 
+# configure the dock
+defaults write com.apple.dock autohide -bool true
+defaults write com.apple.dock magnification -bool true
+defaults write com.apple.dock largesize -float 76
+defaults write com.apple.dock tilesize -float 46
+killall Dock
+
 # empties out all of the crap from the dock
+
+if ! which brew ; then
+  exit 1
+fi
 
 brew install dockutil
 
