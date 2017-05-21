@@ -39,10 +39,10 @@ Host jack.wks jack.wks.liquidweb.com lol lol.deleteos.com wiki wiki2 wiki2.hostb
 	PKCS11Provider /usr/local/lib/kr-pkcs11.so
 	ProxyCommand /usr/local/bin/krssh %h %p
 	IdentityFile ~/.ssh/id_kryptonite
-	IdentityFile ~/.ssh/id_ed25519
-	IdentityFile ~/.ssh/id_rsa
-	IdentityFile ~/.ssh/id_ecdsa
-	IdentityFile ~/.ssh/id_dsa
+	# IdentityFile ~/.ssh/id_ed25519
+	# IdentityFile ~/.ssh/id_rsa
+	# IdentityFile ~/.ssh/id_ecdsa
+	# IdentityFile ~/.ssh/id_dsa
 
 Host *	
 	Protocol 2
