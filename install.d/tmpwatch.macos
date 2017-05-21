@@ -1,0 +1,20 @@
+#!/bin/bash
+
+if ! which brew ; then
+  exit 1
+fi
+
+brew install tmpwatch
+
+eval "cat <<EOF
+$(<${DOTFILES}/config/com.deleteos.tmpwatch-downloads.plist)
+EOF
+" 2> /dev/null > ~/Library/LaunchAssets/com.deleteos.tmpwatch-downloads.plist
+
+eval "cat <<EOF
+$(<${DOTFILES}/config/com.deleteos.tmpwatch-tmp.plist)
+EOF
+" 2> /dev/null > ~/Library/LaunchAssets/com.deleteos.tmpwatch-tmp.plist
+
+launchctl load ~/Library/LaunchAssets/com.deleteos.tmpwatch-downloads.plist
+launchctl load ~/Library/LaunchAssets/com.deleteos.tmpwatch-tmp.plist
