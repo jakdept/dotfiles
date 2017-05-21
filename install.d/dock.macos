@@ -9,11 +9,12 @@ killall Dock
 
 # empties out all of the crap from the dock
 
-if ! which brew ; then
-  exit 1
+if ! which dockutil ; then
+  if ! which brew ; then
+    exit 1
+  fi
+  brew install dockutil
 fi
-
-brew install dockutil
 
 echo ''
 

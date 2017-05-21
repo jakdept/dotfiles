@@ -1,10 +1,11 @@
 #!/bin/bash
 
-if ! which brew ; then
-  exit 1
+if ! which tmpwatch ; then
+  if ! which brew ; then
+    exit 1
+  fi
+  brew install tmpwatch
 fi
-
-brew install tmpwatch
 
 eval "cat <<EOF
 $(<${DOTFILES}/config/com.deleteos.tmpwatch-downloads.plist)
