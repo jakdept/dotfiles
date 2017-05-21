@@ -31,7 +31,6 @@
     "go.vetOnSave": true,
     "go.coverOnSave": true,
     "go.goroot": "/usr/local/go",
-    "go.gopath": "/Users/jack/go",
     "editor.rulers": [
         80,
         140
