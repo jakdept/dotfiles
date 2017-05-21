@@ -2,6 +2,10 @@
 
 # installs golang, and installs a bunch of binaries i like
 
+if ! which brew ; then
+  exit 1
+fi
+
 brew install go
 
 mkdir -p ~/go/src ~/go/bin
