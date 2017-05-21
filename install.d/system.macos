@@ -22,29 +22,5 @@ chflags nohidden ~/Library
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 
-# configure the trackpad how i like it
-defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
-#defaults write com.apple.AppleMultitouchTrackpad Dragging -bool true
-#defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Dragging -bool true
-defaults write com.apple.AppleMultitouchTrackpad TrackpadRotate -bool false
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRotate -bool false
-defaults write com.apple.AppleMultitouchTrackpad TrackpadTwoFingerFromRightEdgeSwipeGesture -int 0
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadTwoFingerFromRightEdgeSwipeGesture -int 0
-
-# configure the dock
-defaults write com.apple.dock autohide -bool true
-defaults write com.apple.dock magnification -bool true
-defaults write com.apple.dock largesize -float 76
-defaults write com.apple.dock tilesize -float 46
-killall Dock
-
 # set the hostname
 sudo scutil --set HostName jack-mobile.wks
-
-# enable the firewall
-/usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
-/usr/libexec/ApplicationFirewall/socketfilterfw --setstealthmode on
-
-# enable filevault
-fdesetup enable -user $(whoami) -defer /var/tmp/fvkey.plist -dontaskatlogout -forceatlogin 0
