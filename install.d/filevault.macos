@@ -1,0 +1,4 @@
+#!/bin/zsh
+#
+# enable filevault
+fdesetup enable -user $(whoami) -defer /var/tmp/fvkey.plist -dontaskatlogout -forceatlogin 0
