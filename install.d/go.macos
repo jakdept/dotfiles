@@ -1,18 +1,14 @@
-#!/bin/sh
+#!/bin/bash
 
 # installs golang, and installs a bunch of binaries i like
-
-if ! which brew ; then
-  exit 1
-fi
-
-brew install go
-
+VERSION=1.8.1
+/usr/bin/curl -sSL https://storage.googleapis.com/golang/go${VERSION}.darwin-amd64.tar.gz|sudo tar xz -C /usr/local
+ 
 mkdir -p ~/go/src ~/go/bin
 
 echo ''
 
-info "installing a bunch of go binaries\n"
+echo "installing a bunch of go binaries\n"
 
 go get github.com/golang/lint/golint
 go get golang.org/x/tools/cmd/cover
@@ -23,7 +19,11 @@ go get golang.org/x/tools/cmd/guru
 go get github.com/davecheney/httpstat
 go get github.com/google/gops
 go get github.com/shurcooL/markdownfmt
+go get github.com/rakyll/statik
+go get github.com/sebdah/goldie
+go get github.com/stretchr/testify/assert
 
+go get github.com/alecthomas/gometalinter
 go get github.com/nsf/gocode
 go get github.com/rogpeppe/godef
 go get github.com/zmb3/gogetdoc
@@ -40,8 +40,8 @@ go get github.com/fatih/gomodifytags
 
 echo ''
 
-info "installing delve\n"
+echo "installing delve\n"
 
 brew install go-delve/delve/delve
 
-info "finished installing go binaries"
+echo "finished installing go binaries"
