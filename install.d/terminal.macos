@@ -1,0 +1,2 @@
+#!/bin/bash
+ln -sf ~/dotfiles/config/com.apple.Terminal.plist ~/Library/Preferences/com.apple.Terminal.plist
