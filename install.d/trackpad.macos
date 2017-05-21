@@ -1,0 +1,11 @@
+#!/bin/zsh
+# configure the trackpad how i like it
+
+defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+#defaults write com.apple.AppleMultitouchTrackpad Dragging -bool true
+#defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Dragging -bool true
+defaults write com.apple.AppleMultitouchTrackpad TrackpadRotate -bool false
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRotate -bool false
+defaults write com.apple.AppleMultitouchTrackpad TrackpadTwoFingerFromRightEdgeSwipeGesture -int 0
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadTwoFingerFromRightEdgeSwipeGesture -int 0
