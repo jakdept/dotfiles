@@ -40,7 +40,7 @@ run_installers () {
   find ${DOTFILES}/install.d -type f -maxdepth 1 -name "*.all" | \
 		while read installer ; do
 			info "installing ${installer}\n"
-			source "${installer}" ; 
+			bash -c "${installer}" || fail "failed to install ${installer}\n"
 			echo ''
 		done
 
@@ -50,7 +50,7 @@ run_installers () {
 		find ${DOTFILES}/install.d -type f -maxdepth 1 -name "*.macos" | \
 		while read installer ; do 
 			info "installing ${installer} \n";
-			source "${installer}" ;
+			zsh -c "${installer}" || fail "failed to install ${installer}\n"
 			echo '';
 		done
 	fi
@@ -60,9 +60,8 @@ run_installers () {
 		find ${DOTFILES}/install.d -type f -maxdepth 1 -name "*.linux" | \
 		while read installer ; do 
 			info "installing ${installer}\n"
-			source "${installer}" ;
+			bash -c "${installer}" || fail "failed to install ${installer}\n"
 			echo ''
 		done
 	fi
-
 }
