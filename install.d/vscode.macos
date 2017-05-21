@@ -2,6 +2,10 @@
 
 # installs vscode (my editor of choice), links my config files, and sets it up how i like
 
+if ! which brew ; then
+  exit 1
+fi
+
 brew cask install visual-studio-code
 
 mkdir -p ~/Library/Application\ Support/Code/User/
