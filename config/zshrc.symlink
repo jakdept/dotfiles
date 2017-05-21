@@ -21,6 +21,7 @@ ZSH_THEME="pygmalion"
 
 # Uncomment this to disable bi-weekly auto-update checks
 # DISABLE_AUTO_UPDATE="true"
+DISABLE_UPDATE_PROMPT=true
 
 # Uncomment to change how often before auto-updates occur? (in days)
 # export UPDATE_ZSH_DAYS=13
