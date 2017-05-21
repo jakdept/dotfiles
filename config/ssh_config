@@ -7,8 +7,35 @@ Host *
 	#Value below is the number of times ServerAliveInterval is done per session.
 	ServerAliveCountmax 1200
 
+Host jack.wks jack.wks.liquidweb.com
+	Hostname jack.wks.liquidweb.com
+	User jack
+	Port 22
+
+# Added by Kryptonite
+Host lol lol.deleteos.com
+	Hostname lol.deleteos.com
+	User jack
+	Port 22
+
+Host wiki wiki2 wiki2.hostbaitor.com
+	Hostname wiki2.hostbaitor.com
+	User root
+	Port 22
+
+Host git.liquidweb.com
+	Hostname git.liquidweb.com
+	User git
+	Port 22
+	
+Host github github.com
+	Hostname github.com
+	User git
+	Port 22
+
 # Added by Kryptonite
 Host jack.wks jack.wks.liquidweb.com lol lol.deleteos.com wiki wiki2 wiki2.hostbaitor.com git.liquidweb.com github github.com
+	StrictHostKeyChecking ask
 	PKCS11Provider /usr/local/lib/kr-pkcs11.so
 	ProxyCommand /usr/local/bin/krssh %h %p
 	IdentityFile ~/.ssh/id_kryptonite
@@ -17,8 +44,10 @@ Host jack.wks jack.wks.liquidweb.com lol lol.deleteos.com wiki wiki2 wiki2.hostb
 	IdentityFile ~/.ssh/id_ecdsa
 	IdentityFile ~/.ssh/id_dsa
 
-Host *
-	Port 22
+Host *	
+	Protocol 2
+	GSSAPIAuthentication yes
+	GSSAPIDelegateCredentials no
 	User root
 	ControlPath ~/.ssh/.master-%r@%h:%p
 	ControlMaster auto
