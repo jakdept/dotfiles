@@ -1,0 +1,5 @@
+#!/bin/zsh
+#
+# enable the firewall
+/usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
+/usr/libexec/ApplicationFirewall/socketfilterfw --setstealthmode on
