@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+# while brew is not strictly required, it adds a lot of goodies
+
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 brew tap \
