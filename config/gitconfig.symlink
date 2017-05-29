@@ -10,7 +10,7 @@
 	protocol = https
 [user]
 	name = Jack Hayhurst
-	email = James.A.Hayhurst@gmail.com
+	email = jakdept@gmail.com
 [credential]
 	helper = GIT_CREDENTIAL_HELPER
 [alias]

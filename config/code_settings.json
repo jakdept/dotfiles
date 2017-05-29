@@ -72,6 +72,14 @@
             }]
         },
         {
+            "before": ["<cmd-d>"],
+            "after": [],
+            "commands": [{
+                "command": "workbench.action.files.save",
+                "args": []
+            }]
+        },
+        {
             "before": ["<C-s>"],
             "after": [],
             "commands": [{
@@ -91,5 +99,6 @@
     "workbench.iconTheme": "material-icon-theme",
     "files.associations": {
         "*.plist": "xml"
-    }
+    },
+    "vim.disableAnnoyingNeovimMessage": true
 }
