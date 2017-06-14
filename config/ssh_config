@@ -33,8 +33,13 @@ Host github github.com
 	User git
 	Port 22
 
+Host ea4 ea4.hostbaitor.com
+	Hostname ea4.hostbaitor.com
+	User root
+	Port 22
+
 # Added by Kryptonite
-Host jack.wks jack.wks.liquidweb.com lol lol.deleteos.com wiki wiki2 wiki2.hostbaitor.com git.liquidweb.com github github.com
+Host jack.wks jack.wks.liquidweb.com lol lol.deleteos.com wiki wiki2 wiki2.hostbaitor.com git.liquidweb.com github github.com ea4.hostbaitor.com ea4
 	StrictHostKeyChecking ask
 	PKCS11Provider /usr/local/lib/kr-pkcs11.so
 	ProxyCommand /usr/local/bin/krssh %h %p
