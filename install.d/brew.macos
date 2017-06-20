@@ -11,6 +11,7 @@ brew tap \
 
 brew install \
   mas \
+	jq \
   tmux \
   docker \
   gnu-sed \
