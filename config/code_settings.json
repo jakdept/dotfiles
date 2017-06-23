@@ -101,5 +101,6 @@
         "*.plist": "xml"
     },
     "vim.disableAnnoyingNeovimMessage": true,
+    "editor.minimap.enabled": false,
     "workbench.welcome.enabled": false
 }
