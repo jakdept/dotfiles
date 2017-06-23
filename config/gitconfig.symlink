@@ -16,7 +16,7 @@
 [alias]
 	count   = !git shortlog -sn
 [branch]
-	autosetupmerge always
+	autosetuprebase = always
 [color]
 	diff = auto
 	status = auto
