@@ -103,5 +103,6 @@
     "vim.disableAnnoyingNeovimMessage": true,
     "editor.minimap.enabled": false,
     "diffEditor.renderSideBySide": false,
+    "editor.fontLigatures": true,
     "workbench.welcome.enabled": false
 }
