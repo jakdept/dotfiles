@@ -38,6 +38,8 @@ go get github.com/cweill/gotests/...
 go get golang.org/x/tools/cmd/godoc
 go get github.com/fatih/gomodifytags
 
+go get github.com/d4l3k/go-pry
+
 echo ''
 
 echo "installing delve\n"
