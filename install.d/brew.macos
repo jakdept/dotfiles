@@ -19,6 +19,7 @@ brew install \
   netcat \
   netcat6 \
   docker \
+	git-lfs \
   mycli \
   mtr
 
@@ -26,4 +27,5 @@ brew cask install
   caffeine \
   font-hack \
   slack \
+	github-desktop \
   keepassxc
