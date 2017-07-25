@@ -1,14 +1,14 @@
 #!/bin/bash
 
+#sudo rm -rf /usr/local/go
+
 # installs golang, and installs a bunch of binaries i like
-VERSION=1.8.1
-/usr/bin/curl -sSL https://storage.googleapis.com/golang/go${VERSION}.darwin-amd64.tar.gz|sudo tar xz -C /usr/local
+#VERSION=1.8.3
+#/usr/bin/curl -sSL https://storage.googleapis.com/golang/go${VERSION}.darwin-amd64.tar.gz|sudo tar xz -C /usr/local
  
 mkdir -p ~/go/src ~/go/bin
 
-echo ''
-
-echo "installing a bunch of go binaries\n"
+echo "installing a bunch of go binaries"
 
 go get github.com/golang/lint/golint
 go get golang.org/x/tools/cmd/cover
@@ -39,11 +39,5 @@ go get golang.org/x/tools/cmd/godoc
 go get github.com/fatih/gomodifytags
 
 go get github.com/d4l3k/go-pry
-
-echo ''
-
-echo "installing delve\n"
-
-brew install go-delve/delve/delve
 
 echo "finished installing go binaries"

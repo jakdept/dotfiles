@@ -19,6 +19,8 @@ brew install \
   netcat \
   netcat6 \
   docker \
+  go \
+  go-delve/delve/delve \
 	git-lfs \
   mycli \
   mtr
