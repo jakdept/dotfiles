@@ -19,6 +19,7 @@ brew install \
   netcat \
   netcat6 \
   ykpers \
+  gpg-agent \
   docker \
   go \
   go-delve/delve/delve \
