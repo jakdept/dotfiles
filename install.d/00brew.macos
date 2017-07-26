@@ -18,6 +18,7 @@ brew install \
   wget \
   netcat \
   netcat6 \
+  ykpers \
   docker \
   go \
   go-delve/delve/delve \
