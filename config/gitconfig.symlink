@@ -28,8 +28,8 @@
 	tool = vimdiff]
 [difftool]
 	prompt = false
-# [url "git@github.com:"]
-#	insteadOf = https://github.com/
+[url "git@git.liquidweb.com:"]
+	insteadOf = https://git.liquidweb.com/
 [core]
 	excludesfile = ~/.gitignore
 	editor = vim
