@@ -67,16 +67,15 @@ host_color() {
   hexColor+=$(host_color_string_replace ${hexHash[5]})
   hexColor+=${hexHash[6]}
 
-  echo $(echo ${hexColor})
+  local rColor=$(echo ${hexColor}|awk '{printf "%d", "0x" substr($0, 0, 2)}')
+  local gColor=$(echo ${hexColor}|awk '{printf "%d", "0x" substr($0, 2, 2)}')
+  local bColor=$(echo ${hexColor}|awk '{printf "%d", "0x" substr($0, 4, 2)}')
 
+  rColor=$((${rColor} * 64))
+  gColor=$((${gColor} * 64))
+  bColor=$((${bColor} * 64))
 
-  local rColor=$(echo ${hexColor}|awk '{printf "%d", "0x" substr($0, 0, 2) "00"}')
-  local gColor=$(echo ${hexColor}|awk '{printf "%d", "0x" substr($0, 2, 2) "00"}')
-  local bColor=$(echo ${hexColor}|awk '{printf "%d", "0x" substr($0, 4, 2) "00"}')
-  # $(echo ${hexColor}|awk '{printf "%d , %d , %d", "0x" substr($0, 0, 2) "ff", "0x" substr($0, 2, 2) "ff", "0x" substr($0, 4, 2) "ff"}')
-  #echo ${part} ${host} ${ip} ${hash} ${hexColor} ${rgbColor}
   echo ${part} ${host} ${ip} ${hash} ${hexColor} ${rColor} ${gColor} ${bColor}
-
 
   printf "\033]0;${host} - ${ip}\007"
 
