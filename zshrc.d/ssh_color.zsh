@@ -6,29 +6,17 @@ host_color_string_replace() {
   fi
 
   case ${1} in
-    8)
+    4|8|C|c)
     echo '0'
     ;;
-    9)
+    5|9|d|D)
     echo '1'
     ;;
-    A|a)
+    6|A|a|e|E)
     echo '2'
     ;;
-    [Bb])
+    7|B|b|F|f)
     echo '3'
-    ;;
-    [Cc])
-    echo '4'
-    ;;
-    [Dd])
-    echo '5'
-    ;;
-    [Ee])
-    echo '6'
-    ;;
-    [Ff])
-    echo '7'
     ;;
     *)
     echo "${1}"
@@ -44,75 +32,65 @@ host_color() {
   fi
 
   # pop off the ssh command on the start
-  local parts=("$@[@]")
+  local part=$(echo $@|sed \
+  -e 's/-[^ bcDEeFIiLQRSWwp]*[bcDEeFIiLQRSWwp]\ [^ ]*\ //g' \
+  -e 's/-[^ ]*\ //g' \
+  -e 's/.*@//g' \
+  -e 's/\ .*$//g')
 
-echo first element is $@[1] and on the array it is $parts[1]
+  local host=""
+  local ip=""
 
-  local pos=1
-  while [[ ${pos} -lt "${#parts[@]}" ]] ; do
-    case "${parts[${pos}]}" in
-      -*[bcDEeFIiLQRSWwp])
-      # these are multi-argument flags - they can have a space after them or no
-        echo double flag ${parts[${pos}]} out of ${parts[*]}
-      local multi_flags='^\-.*[bcDEeFIiLQRSWwp]\ +\-'
-      local nextTwo="${parts[${pos}]} ${parts[${pos}+1]}"
-      if [[ ${nextTwo} =~ "${multi_flags}" ]]; then
-        # if there is a space between this arg and the next, skip twice
-        parts=(${parts:2})
-      else
-        parts=(${parts:1})
-      fi
-      unset multi_flags
-      unset nextTwo
-      ;;
-      -*)
-        echo single flag at ${parts[${pos}]} out of ${parts[*]}
-        parts=(${parts:1})
-      ;;
-      *)
-        echo looking at ${parts[${pos}]} out of ${parts[*]}
-        ((pos++))
-      ;;
-    esac
-  done
+  local ipv4='^([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})$'
+  local ipv6='^([0-9a-fA-F:]*)$'
 
-  echo "out of case statement and the remaining parts are $parts[*]"
-
-  return 0
-  unset pos
-  local -x host=""
-
-  host=$parts[1]
-  local ipv4='^([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})'
-  local ipv6='^([0-9a-fA-F:]*)'
-
-  if [[ ${host} =~ ${ipv4} ]]; then
-    if [[ $(dig +short -x $match[1]) != "" ]]; then
-      # if there's a ptr record, set that to the hostname
-      host=$(dig +short -x $match[1])
-    else
-      host=$match[1]
-    fi
-  elif [[ ${host} =~ ${ipv6} ]] ; then
-    if [[ $(dig +short -x $match[1]) != "" ]]; then
-      # if there's a ptr record, set that to the hostname
-      host=$(dig +short -x $match[1])
-    else
-      host=$match[1]
-    fi
+  if [[ ${part} =~ ${ipv4} ]]; then
+    ip=${part}
+    host=$(dig +short -x ${part}|head -n1)
+  elif [[ ${part} =~ ${ipv6} ]] ; then
+    ip=${part}
+    host=$(dig +short -x ${part}|head -n1)
+  else
+    ip=$(dig +short ${part}|head -n1)
+    host=${part}
   fi
 
-  local hash=$(echo ${host}|openssl md5|awk '{print $2}')
+  local hash=$(echo ${host} ${ip}|openssl md5|awk '{print $NF}')
 
-  local -x ret_val
+  local hexHash=$(echo ${hash}|awk '{print substr($0, 0, 6)}')
 
-  local color=$(host_color_string_replace ${hash:0:1})
-  color+=${hash:1:2}
-  color+=$(host_color_string_replace ${hash:2:3})
-  color+=${hash:3:4}
-  color+=$(host_color_string_replace ${hash:5:6})
-  color+=${hash:6:7}
+  local hexColor=""
+  hexColor+=$(host_color_string_replace ${hexHash[1]})
+  hexColor+=${hexHash[2]}
+  hexColor+=$(host_color_string_replace ${hexHash[3]})
+  hexColor+=${hexHash[4]}
+  hexColor+=$(host_color_string_replace ${hexHash[5]})
+  hexColor+=${hexHash[6]}
 
-  echo ${host}
-  echo ${color}
+  echo $(echo ${hexColor})
+
+
+  local rColor=$(echo ${hexColor}|awk '{printf "%d", "0x" substr($0, 0, 2) "00"}')
+  local gColor=$(echo ${hexColor}|awk '{printf "%d", "0x" substr($0, 2, 2) "00"}')
+  local bColor=$(echo ${hexColor}|awk '{printf "%d", "0x" substr($0, 4, 2) "00"}')
+  # $(echo ${hexColor}|awk '{printf "%d , %d , %d", "0x" substr($0, 0, 2) "ff", "0x" substr($0, 2, 2) "ff", "0x" substr($0, 4, 2) "ff"}')
+  #echo ${part} ${host} ${ip} ${hash} ${hexColor} ${rgbColor}
+  echo ${part} ${host} ${ip} ${hash} ${hexColor} ${rColor} ${gColor} ${bColor}
+
+
+  printf "\033]0;${host} - ${ip}\007"
+
+  if [[ "$TERM" = "screen"* ]] && [[ -n "$TMUX" ]] ; then
+    tmux select-pane -P "bg=#${color}"
+  elif [[ ${TERM_PROGRAM} -eq "Apple_Terminal" ]] ; then
+    osascript -e "tell application \"Terminal\"
+      set targetWindow to selected tab of front window
+      set background color of targetWindow to { ${rColor}, ${gColor}, ${bColor} }
+      end tell"
+  elif [[ ${TERM_PROGRAM} -eq "iTerm.app" ]] ; then
+  else
+    echo changing color
+    printf "\033]11;#${color}\007"
+  fi
+
 }
