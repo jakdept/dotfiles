@@ -15,19 +15,19 @@ host_color_string_replace() {
     A|a)
     echo '2'
     ;;
-    B|b)
+    [Bb])
     echo '3'
     ;;
-    C|c)
+    [Cc])
     echo '4'
     ;;
-    D|d)
+    [Dd])
     echo '5'
     ;;
-    E|e)
+    [Ee])
     echo '6'
     ;;
-    F|f)
+    [Ff])
     echo '7'
     ;;
     *)
@@ -44,30 +44,42 @@ host_color() {
   fi
 
   # pop off the ssh command on the start
-  local parts=$@
+  local parts=("$@[@]")
+
+echo first element is $@[1] and on the array it is $parts[1]
+
   local pos=1
   while [[ ${pos} -lt "${#parts[@]}" ]] ; do
-    case "$parts[${pos}]" in
-      ^-*[b|c|D|E|e|F|I|i|L|Q|R|S|W|w|p])
+    case "${parts[${pos}]}" in
+      -*[bcDEeFIiLQRSWwp])
       # these are multi-argument flags - they can have a space after them or no
-      local multi_flags='^\-.*?(b|c|D|E|e|F|I|i|L|Q|R|S|W|w|p)\ +-'
-      if [[ $parts[${pos}] =~ ${multi_flags} ]]; then
+        echo double flag ${parts[${pos}]} out of ${parts[*]}
+      local multi_flags='^\-.*[bcDEeFIiLQRSWwp]\ +\-'
+      local nextTwo="${parts[${pos}]} ${parts[${pos}+1]}"
+      if [[ ${nextTwo} =~ "${multi_flags}" ]]; then
         # if there is a space between this arg and the next, skip twice
-        shift ${parts}
-        shift ${parts}
+        parts=(${parts:2})
+      else
+        parts=(${parts:1})
       fi
+      unset multi_flags
+      unset nextTwo
       ;;
-      ^-*)
-        shift ${parts}
+      -*)
+        echo single flag at ${parts[${pos}]} out of ${parts[*]}
+        parts=(${parts:1})
       ;;
       *)
+        echo looking at ${parts[${pos}]} out of ${parts[*]}
         ((pos++))
       ;;
     esac
   done
 
+  echo "out of case statement and the remaining parts are $parts[*]"
+
+  return 0
   unset pos
-  unset parts
   local -x host=""
 
   host=$parts[1]
