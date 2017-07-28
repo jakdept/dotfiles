@@ -1,6 +1,6 @@
 #!/bin/bash
 
-host_color_string_replace() {
+ssh_color_string_replace() {
   if [ -z ${1} ]; then
     return 2
   fi
@@ -25,7 +25,7 @@ host_color_string_replace() {
 
 }
 
-host_color() {
+ssh-color() {
   if [[ $# -lt 1 ]]; then
     print "you have to specify a host to connect to"
     exit 1
@@ -60,7 +60,7 @@ host_color() {
   local hexHash=$(echo ${hash}|awk '{print substr($0, 0, 6)}')
 
   local hexColor=""
-  hexColor+=$(host_color_string_replace ${hexHash[1]})
+  hexColor+=$(ssh_color_string_replace ${hexHash[1]})
   hexColor+=${hexHash[2]}
   hexColor+=$(host_color_string_replace ${hexHash[3]})
   hexColor+=${hexHash[4]}
@@ -80,19 +80,44 @@ host_color() {
   gColor=$((${gColor} * 64))
   bColor=$((${bColor} * 64))
 
-  if [[ "$TERM" = "screen"* ]] && [[ -n "$TMUX" ]] ; then
-    tmux select-pane -P "bg=#${color}"
-  elif [[ ${TERM_PROGRAM} == "Apple_Terminal" ]] ; then
-    osascript -e "tell application \"Terminal\"
-      set background color of current settings of selected tab of front window to {${rColor}, ${gColor}, ${bColor}}
-    end tell"
-  elif [[ ${TERM_PROGRAM} == "iTerm.app" ]] ; then
-    osascript -e "tell application \"iTerm\"
-      set background color of current session of front window to { ${rColor}, ${gColor}, ${bColor} }
-    end tell"
-  else
-    echo changing color
-    printf "\033]11;#${hexColor}\007"
+  if [[ -z ${SSH_COLOR+x} ]]; then
+    if [[ "$TERM" = "screen"* ]] && [[ -n "$TMUX" ]] ; then
+      tmux select-pane -P "bg=#${color}"
+    elif [[ ${TERM_PROGRAM} == "Apple_Terminal" ]] ; then
+      osascript -e "tell application \"Terminal\"
+        set background color of current settings of selected tab of front window to {${rColor}, ${gColor}, ${bColor}}
+      end tell"
+    elif [[ ${TERM_PROGRAM} == "iTerm.app" ]] ; then
+      osascript -e "tell application \"iTerm\"
+        set background color of current session of front window to { ${rColor}, ${gColor}, ${bColor} }
+      end tell"
+    else
+      printf "\033]11;#${hexColor}\007"
+    fi
   fi
 
+  ssh $*
+
+  local retCode=$?
+
+  if [[ -z ${SSH_COLOR+x} ]]; then
+    if [[ "$TERM" = "screen"* ]] && [[ -n "$TMUX" ]] ; then
+      tmux select-pane -P "bg=#000000"
+    elif [[ ${TERM_PROGRAM} == "Apple_Terminal" ]] ; then
+      osascript -e "tell application \"Terminal\"
+        set background color of current settings of selected tab of front window to { 0, 0, 0 }
+      end tell"
+    elif [[ ${TERM_PROGRAM} == "iTerm.app" ]] ; then
+      osascript -e "tell application \"iTerm\"
+        set background color of current session of front window to { 0, 0, 0 }
+      end tell"
+    else
+      printf "\033]11;#000000\007"
+    fi
+  fi
+
+  return ${retCode}
 }
+
+compdef _ssh color-ssh=ssh
+alias ssh=color-ssh
