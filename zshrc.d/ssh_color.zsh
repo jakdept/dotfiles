@@ -62,12 +62,10 @@ ssh-color() {
   local hexColor=""
   hexColor+=$(ssh_color_string_replace ${hexHash[1]})
   hexColor+=${hexHash[2]}
-  hexColor+=$(host_color_string_replace ${hexHash[3]})
+  hexColor+=$(ssh_color_string_replace ${hexHash[3]})
   hexColor+=${hexHash[4]}
-  hexColor+=$(host_color_string_replace ${hexHash[5]})
+  hexColor+=$(ssh_color_string_replace ${hexHash[5]})
   hexColor+=${hexHash[6]}
-
-  echo ${part} ${host} ${ip} ${hash} ${hexColor}
 
   # you can set the title for everything - idk
   printf "\033]0;${host} - ${ip}\007"
@@ -119,5 +117,5 @@ ssh-color() {
   return ${retCode}
 }
 
-compdef _ssh color-ssh=ssh
-alias ssh=color-ssh
+compdef _ssh ssh-color=ssh
+alias ssh=ssh-color
