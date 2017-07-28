@@ -69,31 +69,27 @@ host_color() {
 
   echo ${part} ${host} ${ip} ${hash} ${hexColor}
 
+  # you can set the title for everything - idk
   printf "\033]0;${host} - ${ip}\007"
 
-  echo just set the title
+  local rColor=$(echo ${hexColor}|awk '{printf "%d", "0x" substr($0, 0, 2)}')
+  local gColor=$(echo ${hexColor}|awk '{printf "%d", "0x" substr($0, 2, 2)}')
+  local bColor=$(echo ${hexColor}|awk '{printf "%d", "0x" substr($0, 4, 2)}')
+
+  rColor=$((${rColor} * 64))
+  gColor=$((${gColor} * 64))
+  bColor=$((${bColor} * 64))
 
   if [[ "$TERM" = "screen"* ]] && [[ -n "$TMUX" ]] ; then
-    echo looks like tmux
     tmux select-pane -P "bg=#${color}"
   elif [[ ${TERM_PROGRAM} == "Apple_Terminal" ]] ; then
-    echo working with terminal.app
-
-    local rColor=$(echo ${hexColor}|awk '{printf "%d", "0x" substr($0, 0, 2)}')
-    local gColor=$(echo ${hexColor}|awk '{printf "%d", "0x" substr($0, 2, 2)}')
-    local bColor=$(echo ${hexColor}|awk '{printf "%d", "0x" substr($0, 4, 2)}')
-
-    rColor=$((${rColor} * 64))
-    gColor=$((${gColor} * 64))
-    bColor=$((${bColor} * 64))
-
     osascript -e "tell application \"Terminal\"
-      set targetWindow to selected tab of front window
-      set background color of targetWindow to { ${rColor}, ${gColor}, ${bColor} }
-      end tell"
+      set background color of current settings of selected tab of front window to {${rColor}, ${gColor}, ${bColor}}
+    end tell"
   elif [[ ${TERM_PROGRAM} == "iTerm.app" ]] ; then
-    echo this looks like iterm
-    printf "\033]6;1;bg;#${hexColor}\007"
+    osascript -e "tell application \"iTerm\"
+      set background color of current session of front window to { ${rColor}, ${gColor}, ${bColor} }
+    end tell"
   else
     echo changing color
     printf "\033]11;#${hexColor}\007"
