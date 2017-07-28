@@ -1,2 +1,3 @@
 #!/bin/zsh
-nohup godoc -http :6060 &>/dev/null &
+lsof -i :6060|tail -n +2|awk '{print $2}'|xargs kill
+nohup godoc -http localhost:6060 &>/dev/null &
