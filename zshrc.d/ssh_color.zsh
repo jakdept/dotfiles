@@ -57,7 +57,7 @@ ssh-color() {
 
   local hash=$(echo ${host} ${ip}|openssl md5|awk '{print $NF}')
 
-  local hexHash=$(echo ${hash}|awk '{print substr($0, 0, 6)}')
+  local hexHash=$(echo ${hash}|awk '{print substr($0, 5, 6)}')
 
   local hexColor=""
   hexColor+=$(ssh_color_string_replace ${hexHash[1]})
@@ -93,6 +93,8 @@ ssh-color() {
       printf "\033]11;#${hexColor}\007"
     fi
   fi
+
+  # echo debugging ${host} ${ip} ${hash} ${hexHash} ${hexColor} ${rColor} ${gColor} ${bColor}
 
   ssh $*
 
