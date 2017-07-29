@@ -31,4 +31,5 @@ brew cask install \
   github-desktop \
   keepassxc
 
+brew cask install \
   font-hack
