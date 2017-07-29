@@ -8,7 +8,7 @@ export DOTFILES=~/dotfiles
 
 source ${DOTFILES}/functions
 
-info '  Running manual installation'
+echo '  Running manual installation'
 
 echo ''
 
