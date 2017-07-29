@@ -8,8 +8,16 @@
 	<integer>0</integer>
 	<key>AppleSmoothFixedFontsSizeThreshold</key>
 	<integer>1</integer>
+	<key>BadgeFont</key>
+	<string>Hack</string>
 	<key>Default Bookmark Guid</key>
 	<string>0064EFEA-0A54-4AEE-BF8E-89C791584744</string>
+	<key>HideScrollbar</key>
+	<true/>
+	<key>HideTabNumber</key>
+	<true/>
+	<key>JobName</key>
+	<false/>
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
 	<key>NSNavLastRootDirectory</key>
@@ -31,7 +39,7 @@
 	gAKACoAN0xAJChEVGVdOUy5rZXlzoxITFIADgASABaMWFxiABoAHgAiACVpJZGVudGlm
 	aWVyVVdpZHRoVkhpZGRlblEwI0BowAAAAAAACNIhIiMkWiRjbGFzc25hbWVYJGNsYXNz
 	ZXNcTlNEaWN0aW9uYXJ5oiMlWE5TT2JqZWN00xAJCicrGaMSExSAA4AEgAWjLC0YgAuA
-	DIAIgAlRMSNAczGdsi0OVtIhIjM0Xk5TTXV0YWJsZUFycmF5ozM1JVdOU0FycmF5XxAP
+	DIAIgAlRMSNAdCGdsi0OVtIhIjM0Xk5TTXV0YWJsZUFycmF5ozM1JVdOU0FycmF5XxAP
 	TlNLZXllZEFyY2hpdmVy0Tg5VUFycmF5gAEACAARABoAIwAtADIANwBGAEwAUQBcAGMA
 	ZgBoAGoAbABzAHsAfwCBAIMAhQCJAIsAjQCPAJEAnACiAKkAqwC0ALUAugDFAM4A2wDe
 	AOcA7gDyAPQA9gD4APwA/gEAAQIBBAEGAQ8BFAEjAScBLwFBAUQBSgAAAAAAAAIBAAAA
@@ -50,17 +58,19 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>1590 324 561 94 0 0 3840 2137 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>1536 674 796 473 0 0 3840 2137 </string>
+	<string>449 225 796 473 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1501 1718 851 419 0 0 3840 2137 </string>
+	<string>693 552 836 475 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>2167 990 836 1147 0 0 3840 2137 </string>
+	<string>696 0 836 475 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>1434 723 836 531 0 0 3840 2137 </string>
+	<string>1501 1662 836 475 0 0 3840 2137 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>1330 990 836 1147 0 0 3840 2137 </string>
+	<string>1503 234 851 475 0 0 3840 2137 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
-	<string>1429 1606 1571 531 0 0 3840 2137 </string>
+	<string>1503 710 851 475 0 0 3840 2137 </string>
+	<key>NSWindow Frame iTerm Window 5</key>
+	<string>617 237 851 475 0 0 3840 2137 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -228,7 +238,9 @@
 			<key>Blinking Cursor</key>
 			<false/>
 			<key>Blur</key>
-			<false/>
+			<true/>
+			<key>Blur Radius</key>
+			<real>14.893960336538461</real>
 			<key>Bold Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -275,7 +287,7 @@
 			<key>Disable Window Resizing</key>
 			<true/>
 			<key>Flashing Bell</key>
-			<false/>
+			<true/>
 			<key>Foreground Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -591,6 +603,8 @@
 			<true/>
 			<key>Normal Font</key>
 			<string>Hack-Regular 12</string>
+			<key>Only The Default BG Color Uses Transparency</key>
+			<false/>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -598,11 +612,11 @@
 			<key>Right Option Key Sends</key>
 			<integer>0</integer>
 			<key>Rows</key>
-			<integer>32</integer>
+			<integer>34</integer>
 			<key>Screen</key>
 			<integer>-1</integer>
 			<key>Scrollback Lines</key>
-			<integer>1000</integer>
+			<integer>10000</integer>
 			<key>Selected Text Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -634,7 +648,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.21212324334319527</real>
+			<real>0.41365800665680474</real>
 			<key>Unlimited Scrollback</key>
 			<false/>
 			<key>Use Bold Font</key>
@@ -648,7 +662,7 @@
 			<key>Vertical Spacing</key>
 			<real>1</real>
 			<key>Visual Bell</key>
-			<true/>
+			<false/>
 			<key>Window Type</key>
 			<integer>0</integer>
 			<key>Working Directory</key>
@@ -707,8 +721,16 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-07-27T04:36:56Z</date>
+	<date>2017-07-28T05:34:15Z</date>
 	<key>SUSendProfileInfo</key>
+	<false/>
+	<key>ShowBookmarkName</key>
+	<false/>
+	<key>TabStyle</key>
+	<integer>0</integer>
+	<key>UseBorder</key>
+	<false/>
+	<key>WindowNumber</key>
 	<false/>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
