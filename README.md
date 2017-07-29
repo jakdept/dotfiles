@@ -19,7 +19,7 @@ xcode-select --install
 Finally run the following - there will be some prompts
 
 ```
-curl https://raw.githubusercontent.com/jakdept/dotfiles/master/install | bash
+curl https://raw.githubusercontent.com/jakdept/dotfiles/master/bootstrap | bash
 ```
 
 ## components

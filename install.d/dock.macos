@@ -26,10 +26,10 @@ dockutil --list | rev | cut -f4- | rev | xargs -L1 dockutil --remove
 # add applications folder to dock
 dockutil --add '/Applications' --display folder
 
-mkdir "/Users/${username}/drive"
+mkdir "/Users/$(whoami)/drive"
 
 # add downloads folder to dock
-dockutil --add "/Users/${username}/Downloads" --display stack
-dockutil --add "/Users/${username}/drive" --display folder
+dockutil --add "/Users/$(whoami)/Downloads" --display stack
+dockutil --add "/Users/$(whoami)/drive" --display folder
 
 echo ''

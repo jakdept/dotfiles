@@ -4,10 +4,9 @@
 
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-brew tap \
-  caskroom/cask \
-  caskroom/fonts \
-  homebrew/core
+brew tap caskroom/cask 
+brew tap caskroom/fonts 
+brew tap homebrew/core
 
 brew install \
   mas \
@@ -26,9 +25,10 @@ brew install \
   mycli \
   mtr
 
-brew cask install
+brew cask install \
   caffeine \
-  font-hack \
   slack \
-	github-desktop \
+  github-desktop \
   keepassxc
+
+  font-hack
