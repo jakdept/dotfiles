@@ -58,13 +58,13 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>1590 324 561 94 0 0 3840 2137 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>449 225 796 473 0 0 1680 1027 </string>
+	<string>1546 577 796 473 0 0 3840 2137 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>693 552 836 475 0 0 1680 1027 </string>
+	<string>1501 1634 836 503 0 0 3840 2137 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>696 0 836 475 0 0 1680 1027 </string>
+	<string>1501 1130 836 503 0 0 3840 2137 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>1501 1662 836 475 0 0 3840 2137 </string>
+	<string>2597 772 1190 673 0 0 3840 2137 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
 	<string>1503 234 851 475 0 0 3840 2137 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
@@ -648,7 +648,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.41365800665680474</real>
+			<real>0.18786751109467456</real>
 			<key>Unlimited Scrollback</key>
 			<false/>
 			<key>Use Bold Font</key>
@@ -721,7 +721,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-07-28T05:34:15Z</date>
+	<date>2017-07-29T07:52:30Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowBookmarkName</key>
