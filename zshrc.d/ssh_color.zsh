@@ -129,7 +129,7 @@ ssh-color() {
 
   # echo debugging ${hash} ${hexHash} ${hexColor} ${host} ${ip} ${rColor} ${gColor} ${bColor}
 
-  [[ -z ${ip} ]] && ssh-change-title ${host} || ssh-change-title "[${host}] - [${ip}]"
+  [[ -z ${ip} ]]&&ssh-change-title ${host}||ssh-change-title "${host} - ${ip}"
 
   ssh-change-color ${hexColor} 
 
