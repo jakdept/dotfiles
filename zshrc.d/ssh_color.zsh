@@ -1,9 +1,11 @@
 #!/bin/bash
 
 SSH_BINARY=$(type -a ssh|awk '!/alias/ {print $NF}'|head -n1)
+compdef _ssh ssh-color=ssh
+alias ssh=ssh-color
+ssh-change-color 000000
 
 ssh_color_string_replace() {
- echo "in string_replace" >&2
   if [ -z ${1} ]; then
     return 2
   fi
@@ -29,13 +31,11 @@ ssh_color_string_replace() {
 }
 
 ssh-change-title() {
-  echo "in change-title" >&2
   # sets the title
   printf "\033]0;$*\007"
 }
 
 ssh-color-convert-rgb(){
-  echo "in convert-rgb" >&2
   local hexColor=${1}
 
   local rColor=$(printf "%d" "0x${hexColor:0:2}00")
@@ -46,7 +46,6 @@ ssh-color-convert-rgb(){
 }
 
 ssh-change-color() {
-  echo "in change color" >&2
   local hexColor=${1}
 
   if [[ -z ${SSH_COLOR+x} ]]; then
@@ -69,21 +68,18 @@ ssh-change-color() {
 }
 
 ssh-color-get-dest () {
-  echo "in get-dest" >&2
-
-  # pop off the ssh command on the start
+  # bcDEeFIiLQRSWwp are all flags for openssh that can take two arguments
   local part=$(echo $@|sed \
   -e 's/-[^ bcDEeFIiLQRSWwp]*[bcDEeFIiLQRSWwp]\ [^ ]*\ //g' \
   -e 's/-[^ ]*\ //g' \
-  -e 's/.*@//g' \
-  -e 's/\ .*$//g')
+  -e 's/\ .*$//g' \
+  -e 's/.*@//g' )
 
   echo ${part}
 }
 
 
 ssh-color-get-host-ip() {
-  echo "in get-host-ip" >&2
   local dest=$1
 
   local host=""
@@ -107,7 +103,6 @@ ssh-color-get-host-ip() {
 }
 
 ssh-color-compress-color() {
-  echo "in compress color" >&2
   local input=${1}
   local hexColor=
 
@@ -122,7 +117,6 @@ ssh-color-compress-color() {
 }
 
 ssh-color() {
-  echo "in outside function" >&2
   if [[ $# -lt 1 ]]; then
     print "you have to specify a host to connect to"
     exit 1
@@ -155,6 +149,3 @@ ssh-color() {
 
   return ${retCode}
 }
-
-compdef _ssh ssh-color=ssh
-alias ssh=ssh-color
