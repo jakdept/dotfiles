@@ -30,27 +30,34 @@ ssh-change-title() {
   printf "\033]0;$*\007"
 }
 
-ssh-change-color() {
+ssh-color-convert-rgb(){
   local hexColor=${1}
 
-  local rColor=$(echo ${hexColor}|awk '{printf "%d", "0x" substr($0, 0, 2)}')
-  local gColor=$(echo ${hexColor}|awk '{printf "%d", "0x" substr($0, 2, 2)}')
-  local bColor=$(echo ${hexColor}|awk '{printf "%d", "0x" substr($0, 4, 2)}')
+  local rColor=$(printf "%d" "0x${hexColor:0:2}00")
+  local gColor=$(printf "%d" "0x${hexColor:2:2}00")
+  local bColor=$(printf "%d" "0x${hexColor:4:2}00")
 
-  rColor=$((${rColor} * 64))
-  gColor=$((${gColor} * 64))
-  bColor=$((${bColor} * 64))
+  echo "${rColor}, ${gColor}, ${bColor}"
+}
+
+ssh-change-color() {
+
+  echo in change color
+
+  local hexColor=${1}
 
   if [[ -z ${SSH_COLOR+x} ]]; then
     if [[ "$TERM" = "screen"* ]] && [[ -n "$TMUX" ]] ; then
       tmux select-pane -P "bg=#${color}"
     elif [[ ${TERM_PROGRAM} == "Apple_Terminal" ]] ; then
+      color=$(ssh-color-convert-rgb ${hexColor})
       osascript -e "tell application \"Terminal\"
-        set background color of current settings of selected tab of front window to {${rColor}, ${gColor}, ${bColor}}
+        set background color of current settings of selected tab of front window to {${color}}
       end tell"
     elif [[ ${TERM_PROGRAM} == "iTerm.app" ]] ; then
+      color=$(ssh-color-convert-rgb ${hexColor})
       osascript -e "tell application \"iTerm\"
-        set background color of current session of front window to { ${rColor}, ${gColor}, ${bColor} }
+        set background color of current session of front window to {${color}}
       end tell"
     else
       printf "\033]11;#${hexColor}\007"
