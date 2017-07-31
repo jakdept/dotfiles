@@ -1,10 +1,5 @@
 #!/bin/bash
 
-SSH_BINARY=$(type -a ssh|awk '!/alias/ {print $NF}'|head -n1)
-compdef _ssh ssh-color=ssh
-alias ssh=ssh-color
-ssh-change-color 000000
-
 ssh_color_string_replace() {
   if [ -z ${1} ]; then
     return 2
@@ -149,3 +144,8 @@ ssh-color() {
 
   return ${retCode}
 }
+
+SSH_BINARY=$(type -a ssh|awk '!/alias/ {print $NF}'|head -n1)
+compdef _ssh ssh-color=ssh
+alias ssh=ssh-color
+ssh-change-color 000000
