@@ -41,9 +41,6 @@ ssh-color-convert-rgb(){
 }
 
 ssh-change-color() {
-
-  echo in change color
-
   local hexColor=${1}
 
   if [[ -z ${SSH_COLOR+x} ]]; then
