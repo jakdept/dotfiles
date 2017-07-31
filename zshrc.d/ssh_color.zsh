@@ -91,7 +91,21 @@ ssh-color-get-host-ip() {
     host=${dest}
   fi
 
-  echo ${ip} ${host}
+  echo ${host} ${ip}
+}
+
+ssh-color-compress-color() {
+  local input=${1}
+  local hexColor=
+
+  hexColor+=$(ssh_color_string_replace ${input[1]})
+  hexColor+=${input[2]}
+  hexColor+=$(ssh_color_string_replace ${input[3]})
+  hexColor+=${input[4]}
+  hexColor+=$(ssh_color_string_replace ${input[5]})
+  hexColor+=${input[6]}
+
+  echo ${hexColor}
 }
 
 ssh-color() {
@@ -105,23 +119,18 @@ ssh-color() {
   local ip=
   local host=
 
-  read ip host <<(ssh-color-get-host-ip ${dest})
+  read host ip <<(ssh-color-get-host-ip ${dest})
 
   local hash=$(echo ${host} ${ip}|openssl md5|awk '{print $NF}')
 
   local hexHash=$(echo ${hash}|awk '{print substr($0, 15, 6)}')
 
-  local hexColor=""
-  hexColor+=$(ssh_color_string_replace ${hexHash[1]})
-  hexColor+=${hexHash[2]}
-  hexColor+=$(ssh_color_string_replace ${hexHash[3]})
-  hexColor+=${hexHash[4]}
-  hexColor+=$(ssh_color_string_replace ${hexHash[5]})
-  hexColor+=${hexHash[6]}
+  local hexColor=$(ssh-color-compress-color ${hexHash})
 
   # echo debugging ${hash} ${hexHash} ${hexColor} ${host} ${ip} ${rColor} ${gColor} ${bColor}
 
-  ssh-change-title " ${host} - [${ip}] "
+  [[ -z ${ip} ]] && ssh-change-title ${host} || ssh-change-title "[${host}] - [${ip}]"
+
   ssh-change-color ${hexColor} 
 
   ssh $*
