@@ -112,12 +112,18 @@ ssh-color-compress-color() {
   echo ${hexColor}
 }
 
+ssh-color-reset() {
+  ssh-change-title " localhost "
+  ssh-change-color 000000
+}
+
 ssh-color() {
   if [[ $# -lt 1 ]]; then
     print "you have to specify a host to connect to"
     exit 1
   fi
 
+  # trap on ctrl-c
   trap ssh-color-reset INT
 
   local dest=$(ssh-color-get-dest $*)
@@ -146,11 +152,6 @@ ssh-color() {
   ssh-change-color 000000
 
   return ${retCode}
-}
-
-ssh-color-reset() {
-  ssh-change-title " localhost "
-  ssh-change-color 000000
 }
 
 SSH_BINARY=$(type -a ssh|awk '!/alias/ {print $NF}'|head -n1)
