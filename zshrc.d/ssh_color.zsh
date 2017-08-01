@@ -118,6 +118,8 @@ ssh-color() {
     exit 1
   fi
 
+  trap ssh-color-reset INT
+
   local dest=$(ssh-color-get-dest $*)
 
   local ip=
@@ -146,7 +148,12 @@ ssh-color() {
   return ${retCode}
 }
 
+ssh-color-reset() {
+  ssh-change-title " localhost "
+  ssh-change-color 000000
+}
+
 SSH_BINARY=$(type -a ssh|awk '!/alias/ {print $NF}'|head -n1)
 compdef _ssh ssh-color=ssh
 alias ssh=ssh-color
-ssh-change-color 000000
+ssh-color-reset
