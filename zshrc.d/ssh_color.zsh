@@ -66,7 +66,8 @@ ssh-color-get-dest () {
   # bcDEeFIiLQRSWwp are all flags for openssh that can take two arguments
   local part=$(echo $@|sed \
   -e 's/-[^ bcDEeFIiLQRSWwp]*[bcDEeFIiLQRSWwp]\ [^ ]*\ //g' \
-  -e 's/-[^ ]*\ //g' \
+  -e 's/ -[^ ]*\ //g' \
+  -e 's/ -[^ ]*$//g' \
   -e 's/\ .*$//g' \
   -e 's/.*@//g' )
 
