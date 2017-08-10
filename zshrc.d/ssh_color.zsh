@@ -64,14 +64,33 @@ ssh-change-color() {
 
 ssh-color-get-dest () {
   # bcDEeFIiLQRSWwp are all flags for openssh that can take two arguments
+  # -e 's/-[^ bcDEeFIilLQRSWwp]*[bcDEeFIilLQRSWwp]\ [^ ]*//g' \
   local part=$(echo $@|sed \
-  -e 's/-[^ bcDEeFIiLQRSWwp]*[bcDEeFIiLQRSWwp]\ [^ ]*\ //g' \
-  -e 's/ -[^ ]*\ //g' \
+  -e 's/^/  /' \
+  -e 's/$/  /' \
+  -e 's/\ -[^ b]*b\ [^ ]*/ /g' \
+  -e 's/\ -[^ c]*c\ [^ ]*/ /g' \
+  -e 's/\ -[^ D]*D\ [^ ]*/ /g' \
+  -e 's/\ -[^ e]*e\ [^ ]*/ /g' \
+  -e 's/\ -[^ E]*E\ [^ ]*/ /g' \
+  -e 's/\ -[^ F]*F\ [^ ]*/ /g' \
+  -e 's/\ -[^ i]*i\ [^ ]*/ /g' \
+  -e 's/\ -[^ I]*I\ [^ ]*/ /g' \
+  -e 's/\ -[^ l]*l\ [^ ]*/ /g' \
+  -e 's/\ -[^ L]*L\ [^ ]*/ /g' \
+  -e 's/\ -[^ p]*p\ [^ ]*/ /g' \
+  -e 's/\ -[^ Q]*Q\ [^ ]*/ /g' \
+  -e 's/\ -[^ R]*R\ [^ ]*/ /g' \
+  -e 's/\ -[^ S]*S\ [^ ]*/ /g' \
+  -e 's/\ -[^ w]*w\ [^ ]*/ /g' \
+  -e 's/\ -[^ W]*W\ [^ ]*/ /g' \
   -e 's/ -[^ ]*$//g' \
+  -e 's/.*@//g' \
+  -e 's/^ *//g' \
   -e 's/\ .*$//g' \
-  -e 's/.*@//g' )
+  )
 
-  echo ${part}
+  echo " [${part}] "
 }
 
 
