@@ -90,7 +90,7 @@ ssh-color-get-dest () {
   -e 's/\ .*$//g' \
   )
 
-  echo " [${part}] "
+  echo "${part}"
 }
 
 
