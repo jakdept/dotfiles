@@ -56,5 +56,5 @@ Host *
 	User root
 	ControlPath ~/.ssh/.master-%r@%h:%p
 	ControlMaster auto
-	ControlPersist 1
+	ControlPersist 15m
 	StrictHostKeyChecking no
