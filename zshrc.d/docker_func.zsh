@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 openssl () {
-	docker run --rm svagi/openssl "$@"
+	docker run --rm -i svagi/openssl "$@"
 }
 
 osc() {
