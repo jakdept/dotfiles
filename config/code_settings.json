@@ -2,9 +2,9 @@
 {
     "go.formatOnSave": true,
     "go.formatTool": "goreturns",
-    "go.buildOnSave": true,
+    "go.buildOnSave": "package",
     // Run Lint tool on save.
-    "go.lintOnSave": true,
+    "go.lintOnSave": "package",
     // Specifies Lint tool name.
     "go.lintTool": "gometalinter",
     // https://github.com/alecthomas/gometalinter#supported-linters
@@ -28,7 +28,7 @@
         "--enable=misspell"
         // "--enable=unused"
     ],
-    "go.vetOnSave": true,
+    "go.vetOnSave": "package",
     "go.coverOnSave": true,
     "go.goroot": "/usr/local/go",
     "editor.rulers": [
@@ -104,5 +104,8 @@
     "editor.minimap.enabled": false,
     "diffEditor.renderSideBySide": false,
     "editor.fontLigatures": true,
-    "workbench.welcome.enabled": false
+    "gitlens.codeLens.recentChange.enabled": false,
+    "gitlens.blame.line.enabled": false,
+  "gitlens.annotations.file.hover.wholeLine": false,
+    "editor.parameterHints": false
 }
