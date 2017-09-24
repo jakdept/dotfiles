@@ -14,6 +14,8 @@
 	<integer>0</integer>
 	<key>AppleSmoothFixedFontsSizeThreshold</key>
 	<integer>1</integer>
+	<key>AppleWindowTabbingMode</key>
+	<string>manual</string>
 	<key>BadgeFont</key>
 	<string>Hack</string>
 	<key>Default Bookmark Guid</key>
@@ -21,6 +23,8 @@
 	<key>HideScrollbar</key>
 	<true/>
 	<key>HideTabNumber</key>
+	<true/>
+	<key>HotkeyMigratedFromSingleToMulti</key>
 	<true/>
 	<key>JobName</key>
 	<false/>
@@ -45,7 +49,7 @@
 	gAKACoAN0xAJChEVGVdOUy5rZXlzoxITFIADgASABaMWFxiABoAHgAiACVpJZGVudGlm
 	aWVyVVdpZHRoVkhpZGRlblEwI0BowAAAAAAACNIhIiMkWiRjbGFzc25hbWVYJGNsYXNz
 	ZXNcTlNEaWN0aW9uYXJ5oiMlWE5TT2JqZWN00xAJCicrGaMSExSAA4AEgAWjLC0YgAuA
-	DIAIgAlRMSNAdCGdsi0OVtIhIjM0Xk5TTXV0YWJsZUFycmF5ozM1JVdOU0FycmF5XxAP
+	DIAIgAlRMSNAdKGdsi0OVtIhIjM0Xk5TTXV0YWJsZUFycmF5ozM1JVdOU0FycmF5XxAP
 	TlNLZXllZEFyY2hpdmVy0Tg5VUFycmF5gAEACAARABoAIwAtADIANwBGAEwAUQBcAGMA
 	ZgBoAGoAbABzAHsAfwCBAIMAhQCJAIsAjQCPAJEAnACiAKkAqwC0ALUAugDFAM4A2wDe
 	AOcA7gDyAPQA9gD4APwA/gEAAQIBBAEGAQ8BFAEjAScBLwFBAUQBSgAAAAAAAAIBAAAA
@@ -63,42 +67,48 @@
 	<true/>
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>1590 324 561 94 0 0 3840 2137 </string>
+	<key>NSWindow Frame SUUpdateAlert</key>
+	<string>1610 1310 620 392 0 0 3840 2138 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>1508 165 918 498 0 0 3840 2138 </string>
+	<string>1404 269 796 473 0 0 3840 2138 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>2 504 822 503 0 0 3840 2138 </string>
+	<string>1543 258 836 503 0 0 3840 2138 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>1648 1512 822 503 0 0 3840 2138 </string>
+	<string>158 860 836 503 0 0 3840 2138 </string>
 	<key>NSWindow Frame iTerm Window 10</key>
-	<string>1330 543 836 531 0 0 3840 2138 </string>
+	<string>1330 0 836 503 0 0 3840 2138 </string>
 	<key>NSWindow Frame iTerm Window 11</key>
-	<string>3004 11 836 531 0 0 3840 2138 </string>
+	<string>1330 514 836 503 0 0 3840 2138 </string>
 	<key>NSWindow Frame iTerm Window 12</key>
-	<string>2167 11 836 531 0 0 3840 2138 </string>
+	<string>3004 788 836 503 0 0 3840 2138 </string>
 	<key>NSWindow Frame iTerm Window 13</key>
-	<string>1330 11 836 531 0 0 3840 2138 </string>
+	<string>1330 1018 836 503 0 0 3840 2138 </string>
 	<key>NSWindow Frame iTerm Window 14</key>
-	<string>493 543 836 531 0 0 3840 2138 </string>
+	<string>-1673 583 836 517 -3840 65 3840 2138 </string>
 	<key>NSWindow Frame iTerm Window 15</key>
-	<string>493 11 836 531 0 0 3840 2138 </string>
+	<string>-836 65 836 517 -3840 65 3840 2138 </string>
 	<key>NSWindow Frame iTerm Window 16</key>
-	<string>-2166 691 836 503 -3840 65 3840 2137 </string>
+	<string>-1673 65 836 517 -3840 65 3840 2138 </string>
+	<key>NSWindow Frame iTerm Window 17</key>
+	<string>-2510 583 836 517 -3840 65 3840 2138 </string>
+	<key>NSWindow Frame iTerm Window 18</key>
+	<string>-2510 65 836 517 -3840 65 3840 2138 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>825 505 822 503 0 0 3840 2138 </string>
+	<string>1798 916 836 503 0 0 3840 2138 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>2 1 822 503 0 0 3840 2138 </string>
+	<string>1370 1635 836 503 0 0 3840 2138 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
-	<string>825 1 822 503 0 0 3840 2138 </string>
+	<string>1945 816 836 503 0 0 3840 2138 </string>
 	<key>NSWindow Frame iTerm Window 5</key>
-	<string>3018 1008 822 503 0 0 3840 2138 </string>
+	<string>2633 764 836 503 0 0 3840 2138 </string>
 	<key>NSWindow Frame iTerm Window 6</key>
-	<string>1648 504 822 503 0 0 3840 2138 </string>
+	<string>3004 1020 836 503 0 0 3840 2138 </string>
 	<key>NSWindow Frame iTerm Window 7</key>
-	<string>1648 0 822 503 0 0 3840 2138 </string>
+	<string>1328 1635 836 503 0 0 3840 2138 </string>
 	<key>NSWindow Frame iTerm Window 8</key>
-	<string>1648 1008 822 503 0 0 3840 2138 </string>
+	<string>2168 0 836 503 0 0 3840 2138 </string>
 	<key>NSWindow Frame iTerm Window 9</key>
-	<string>493 1075 836 531 0 0 3840 2138 </string>
+	<string>1646 955 836 503 0 0 3840 2138 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -283,7 +293,7 @@
 			<key>Close Sessions On End</key>
 			<true/>
 			<key>Columns</key>
-			<integer>116</integer>
+			<integer>120</integer>
 			<key>Command</key>
 			<string></string>
 			<key>Cursor Color</key>
@@ -640,7 +650,7 @@
 			<key>Right Option Key Sends</key>
 			<integer>0</integer>
 			<key>Rows</key>
-			<integer>34</integer>
+			<integer>36</integer>
 			<key>Screen</key>
 			<integer>-1</integer>
 			<key>Scrollback Lines</key>
@@ -751,7 +761,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-08-30T10:58:15Z</date>
+	<date>2017-09-24T22:36:55Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -769,6 +779,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.0.15</string>
+	<string>3.1.2</string>
 </dict>
 </plist>
