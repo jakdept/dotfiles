@@ -20,6 +20,7 @@ brew install \
   ykpers \
   docker \
   go \
+	thefuck \
   go-delve/delve/delve \
 	git-lfs \
   mycli \

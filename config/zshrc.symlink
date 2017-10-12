@@ -72,3 +72,5 @@ if [ -x /usr/libexec/path_helper ]; then
 fi
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+unsetopt correct_all
