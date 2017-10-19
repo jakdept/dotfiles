@@ -1,12 +1,3 @@
-Host *
-	#XAuthLocation /opt/X11/bin/xauth
-	#SendEnv LANG LC_*
-	SendEnv LANG=en_US.UTF-8
-	#Value below in seconds.
-	ServerAliveInterval 30
-	#Value below is the number of times ServerAliveInterval is done per session.
-	ServerAliveCountmax 1200
-
 Host jack.wks jack.wks.liquidweb.com
 	Hostname jack.wks.liquidweb.com
 	User jack
@@ -40,7 +31,6 @@ Host ea4 ea4.hostbaitor.com
 
 # Added by Kryptonite
 Host jack.wks jack.wks.liquidweb.com lol lol.deleteos.com wiki wiki2 wiki2.hostbaitor.com git.liquidweb.com github github.com ea4.hostbaitor.com ea4 objstor.hostbaitor.com rpmbuild.hostbaitor.com
-	StrictHostKeyChecking ask
 	PKCS11Provider /usr/local/lib/kr-pkcs11.so
 	ProxyCommand /usr/local/bin/krssh %h %p
 	IdentityFile ~/.ssh/id_kryptonite
@@ -58,3 +48,11 @@ Host *
 	ControlMaster auto
 	ControlPersist 15m
 	StrictHostKeyChecking no
+	#XAuthLocation /opt/X11/bin/xauth
+
+	#SendEnv LANG LC_*
+	SendEnv LANG=en_US.UTF-8
+	#Value below in seconds.
+	ServerAliveInterval 30
+	#Value below is the number of times ServerAliveInterval is done per session.
+	ServerAliveCountmax 1200
