@@ -111,6 +111,16 @@
     "gitlens.annotations.file.hover.wholeLine": false,
     "editor.parameterHints": false,
     "material-icon-theme.showUpdateMessage": false,
-"workbench.editor.labelFormat": "short",
-"git.enableSmartCommit": true
+    "workbench.editor.labelFormat": "short",
+    "git.enableSmartCommit": true,
+    "gitlens.advanced.messages": {
+        "suppressCommitHasNoPreviousCommitWarning": false,
+        "suppressCommitNotFoundWarning": false,
+        "suppressFileNotUnderSourceControlWarning": false,
+        "suppressGitVersionWarning": false,
+        "suppressLineUncommittedWarning": false,
+        "suppressNoRepositoryWarning": false,
+        "suppressUpdateNotice": true,
+        "suppressWelcomeNotice": false
+    }
 }
