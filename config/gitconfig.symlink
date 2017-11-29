@@ -11,8 +11,8 @@
 [user]
 	name = Jack Hayhurst
 	email = jakdept@gmail.com
-[credential]
-	helper = GIT_CREDENTIAL_HELPER
+#[credential]
+#	helper = GIT_CREDENTIAL_HELPER
 [alias]
 	count   = !git shortlog -sn
 [branch]
