@@ -36,7 +36,7 @@
         140
     ],
     "editor.fontFamily": "Hack, Menlo, Monaco, 'Courier New', monospace",
-    "editor.fontSize": 12,
+    "editor.fontSize": 11,
     "terminal.integrated.fontFamily": "Hack, Menlo, Monaco, Consolas, \"Droid Sans Mono\", \"Courier New\", monospace, \"Droid Sans Fallback\"",
     "editor.tabSize": 2,
     "window.zoomLevel": 0,
