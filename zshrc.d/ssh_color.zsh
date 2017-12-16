@@ -169,7 +169,8 @@ ssh-color() {
 
   ssh-change-title " localhost "
   ssh-change-color 000000
-
+  
+  trap - SIGINT
   return ${retCode}
 }
 
