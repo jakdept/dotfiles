@@ -75,9 +75,9 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>1610 1309 620 392 0 0 3840 2138 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>794 496 796 473 0 0 3840 2138 </string>
+	<string>1014 607 796 473 0 0 3840 2138 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1102 685 0 0 3840 2138 </string>
+	<string>2878 0 962 615 0 0 3840 2138 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>1681 711 1074 713 0 0 3840 2138 </string>
 	<key>NSWindow Frame iTerm Window 10</key>
@@ -300,7 +300,7 @@
 			<key>Close Sessions On End</key>
 			<true/>
 			<key>Columns</key>
-			<integer>156</integer>
+			<integer>160</integer>
 			<key>Command</key>
 			<string></string>
 			<key>Cursor Color</key>
@@ -780,7 +780,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-11-30T10:06:56Z</date>
+	<date>2017-12-19T01:47:07Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowBookmarkName</key>

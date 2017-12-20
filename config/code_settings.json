@@ -36,7 +36,7 @@
         140
     ],
     "editor.fontFamily": "Hack, Menlo, Monaco, 'Courier New', monospace",
-    "editor.fontSize": 11,
+    "editor.fontSize": 13,
     "terminal.integrated.fontFamily": "Hack, Menlo, Monaco, Consolas, \"Droid Sans Mono\", \"Courier New\", monospace, \"Droid Sans Fallback\"",
     "editor.tabSize": 2,
     "window.zoomLevel": 0,
@@ -50,6 +50,7 @@
     "editor.wordWrap": "off",
     "workbench.colorTheme": "WarpOS",
     "markdown.preview.doubleClickToSwitchToEditor": false,
+    "vim.foldfix": true,
     "vim.otherModesKeyBindingsNonRecursive": [{
             "before": ["Z", "Z"],
             "after": [],
