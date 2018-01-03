@@ -1,6 +1,6 @@
 # source lwbins
-for file in ~/dotfiles/lwbins/zshrc.d/*.zsh; do
+for file in ~/dotfiles/lwbin/zshrc.d/*.zsh; do
 	source "$file"
 done
 
-PATH=${PATH}:~/dotfiles/lwbins/bin
+PATH=${PATH}:${HOME}/dotfiles/lwbin/bin
