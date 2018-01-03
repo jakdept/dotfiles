@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+export SSLKEYLOGFILE=${TMPDIR}/sslkey.log /Applications/Chromium.app/Contents/MacOS/Chromium
