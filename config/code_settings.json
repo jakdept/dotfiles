@@ -40,6 +40,7 @@
     "terminal.integrated.fontFamily": "Hack, Menlo, Monaco, Consolas, \"Droid Sans Mono\", \"Courier New\", monospace, \"Droid Sans Fallback\"",
     "editor.tabSize": 2,
     "window.zoomLevel": 0,
+    "search.useIgnoreFiles": false,
     "workbench.editor.enablePreview": false,
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "python.pythonPath": "python3.5",
