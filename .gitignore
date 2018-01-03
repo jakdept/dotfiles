@@ -6,5 +6,6 @@ atom.symlink/packages
 atom.symlink/storage
 atom.symlink/themes
 oh-my-zsh
+lwbin
 
 git/gitconfig.symlink
