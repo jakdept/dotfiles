@@ -33,7 +33,7 @@ run_installers () {
   # find the installers and run them iteratively
 	if [ "$(uname -s)" == "Darwin" ]
 	then
-		find ${DOTFILES}/install.d -type f -maxdepth 1 -name "*.macos" | \
+		find ${DOTFILES}/install.d -type f -maxdepth 1 -name "*.macos" | sort |\
 		while read installer ; do 
 			echo "installing ${installer} \n";
 			source "${installer}"
@@ -44,7 +44,7 @@ run_installers () {
 
 	if [ "$(uname -s)" == "Linux" ]
 	then
-		find ${DOTFILES}/install.d -type f -maxdepth 1 -name "*.linux" | \
+		find ${DOTFILES}/install.d -type f -maxdepth 1 -name "*.linux" | sort |\
 		while read installer ; do 
 			echo "installing ${installer}\n"
 			source "${installer}" 
@@ -53,7 +53,7 @@ run_installers () {
 		done
 	fi
 
-	find ${DOTFILES}/install.d -type f -maxdepth 1 -name "*.all" | \
+	find ${DOTFILES}/install.d -type f -maxdepth 1 -name "*.all" | sort |\
 		while read installer ; do
 			echo "installing ${installer}\n"
 			source "${installer}" 
