@@ -14,16 +14,16 @@ Host *
 Host jack.wks jack.wks.liquidweb.com
 	PKCS11Provider /usr/local/lib/kr-pkcs11.so
 	ProxyCommand /usr/local/bin/krssh %h %p
-	IdentityFile ~/.ssh/id_kryptonite
+	IdentityFile ~/.ssh/id_krypton
 	Hostname jack.wks.liquidweb.com
 	User jack
 	Port 22
 
-# Added by Kryptonite
+# Added by Krypton
 Host lol lol.deleteos.com
 	PKCS11Provider /usr/local/lib/kr-pkcs11.so
 	ProxyCommand /usr/local/bin/krssh %h %p
-	IdentityFile ~/.ssh/id_kryptonite
+	IdentityFile ~/.ssh/id_krypton
 	Hostname lol.deleteos.com
 	User jack
 	Port 22
@@ -31,7 +31,7 @@ Host lol lol.deleteos.com
 Host supportdev supportdev.liquidweb.com
 	PKCS11Provider /usr/local/lib/kr-pkcs11.so
 	ProxyCommand /usr/local/bin/krssh %h %p
-	IdentityFile ~/.ssh/id_kryptonite
+	IdentityFile ~/.ssh/id_krypton
 	Hostname supportdev.liquidweb.com
 	User jack
 	Port 22
@@ -39,7 +39,7 @@ Host supportdev supportdev.liquidweb.com
 Host wiki wiki2 wiki2.hostbaitor.com
 	PKCS11Provider /usr/local/lib/kr-pkcs11.so
 	ProxyCommand /usr/local/bin/krssh %h %p
-	IdentityFile ~/.ssh/id_kryptonite
+	IdentityFile ~/.ssh/id_krypton
 	Hostname wiki2.hostbaitor.com
 	User root
 	Port 22
@@ -47,7 +47,7 @@ Host wiki wiki2 wiki2.hostbaitor.com
 Host github github.com
 	PKCS11Provider /usr/local/lib/kr-pkcs11.so
 	ProxyCommand /usr/local/bin/krssh %h %p
-	IdentityFile ~/.ssh/id_kryptonite
+	IdentityFile ~/.ssh/id_krypton
 	Hostname github.com
 	User git
 	Port 22
@@ -55,7 +55,7 @@ Host github github.com
 Host ea4 ea4.hostbaitor.com
 	PKCS11Provider /usr/local/lib/kr-pkcs11.so
 	ProxyCommand /usr/local/bin/krssh %h %p
-	IdentityFile ~/.ssh/id_kryptonite
+	IdentityFile ~/.ssh/id_krypton
 	Hostname ea4.hostbaitor.com
 	User root
 	Port 22
@@ -63,7 +63,7 @@ Host ea4 ea4.hostbaitor.com
 Host objstor objstor.hostbaitor.com
 	PKCS11Provider /usr/local/lib/kr-pkcs11.so
 	ProxyCommand /usr/local/bin/krssh %h %p
-	IdentityFile ~/.ssh/id_kryptonite
+	IdentityFile ~/.ssh/id_krypton
 	Hostname objstor.hostbaitor.com
 	User root
 	Port 22
@@ -74,11 +74,11 @@ Host git.liquidweb.com
 	User git
 	Port 22
 
-## Added by Kryptonite
+## Added by Krypton
 #Host supportdev.* jack.wks.* lol wiki wiki2 ea4 objstor rpmbuild .*hostbaitor.com .*deleteos.com .*github.com
 #	PKCS11Provider /usr/local/lib/kr-pkcs11.so
 #	ProxyCommand /usr/local/bin/krssh %h %p
-#	IdentityFile ~/.ssh/id_kryptonite
+#	IdentityFile ~/.ssh/id_krypton
 #	# IdentityFile ~/.ssh/id_ed25519
 #	# IdentityFile ~/.ssh/id_rsa
 #	# IdentityFile ~/.ssh/id_ecdsa
