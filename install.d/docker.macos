@@ -1,0 +1,14 @@
+
+brew install docker \
+  docker-machine \
+  xhyve \
+  docker-machine-driver-xhyve
+
+sudo chown root:wheel $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
+sudo chmod u+s $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
+
+brew services start docker-machine
+
+docker-machine create default --driver xhyve
+
+eval $(docker-machine env default)

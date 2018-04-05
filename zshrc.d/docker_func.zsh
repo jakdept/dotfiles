@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+eval $(docker-machine env default)
+
 openssl () {
 	docker run --rm -i svagi/openssl "$@"
 }

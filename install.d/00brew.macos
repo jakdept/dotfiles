@@ -12,13 +12,11 @@ brew install \
   mas \
 	jq \
   tmux \
-  docker \
   gnu-sed \
   wget \
   netcat \
   netcat6 \
   ykpers \
-  docker \
   go \
 	thefuck \
   go-delve/delve/delve \
@@ -28,9 +26,6 @@ brew install \
 
 brew cask install \
   caffeine \
-  slack \
-  github-desktop \
-  keepassxc
-
-brew cask install \
-  font-hack
+  workflowy \
+  font-hack \
+  1password
