@@ -29,13 +29,6 @@ install_dotfiles () {
 }
 
 run_installers () {
-  find ${DOTFILES}/install.d -type f -maxdepth 1 -name "*.all" | \
-		while read installer ; do
-			echo "installing ${installer}\n"
-			source "${installer}" 
-			[[ $? -ne 0 ]] && fail "failed to install ${installer}\n"
-			echo ''
-		done
 
   # find the installers and run them iteratively
 	if [ "$(uname -s)" == "Darwin" ]
@@ -59,4 +52,13 @@ run_installers () {
 			echo ''
 		done
 	fi
+
+	find ${DOTFILES}/install.d -type f -maxdepth 1 -name "*.all" | \
+		while read installer ; do
+			echo "installing ${installer}\n"
+			source "${installer}" 
+			[[ $? -ne 0 ]] && fail "failed to install ${installer}\n"
+			echo ''
+		done
+
 }
