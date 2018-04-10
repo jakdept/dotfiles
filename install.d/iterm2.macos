@@ -1,0 +1,8 @@
+brew install caskroom/cask/iterm2
+
+# set the preferences folder
+defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/dotfiles/config"
+
+# set iterm2 to use those preferences
+defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+
