@@ -10,7 +10,6 @@ Host *
 	ServerAliveCountmax 1200
 	#XAuthLocation /opt/X11/bin/xauth
 
-
 Host jack.wks jack.wks.liquidweb.com
 	PKCS11Provider /usr/local/lib/kr-pkcs11.so
 	ProxyCommand /usr/local/bin/krssh %h %p
@@ -26,6 +25,14 @@ Host lol lol.deleteos.com
 	IdentityFile ~/.ssh/id_krypton
 	Hostname lol.deleteos.com
 	User jack
+	Port 22
+
+Host gce gce.deleteos.com
+	PKCS11Provider /usr/local/lib/kr-pkcs11.so
+	ProxyCommand /usr/local/bin/krssh %h %p
+	IdentityFile ~/.ssh/id_krypton
+	Hostname gce.deleteos.com
+	User jakdept
 	Port 22
 
 Host supportdev supportdev.liquidweb.com
@@ -70,7 +77,7 @@ Host objstor objstor.hostbaitor.com
 	
 Host git.liquidweb.com
 	Hostname git.liquidweb.com
-	IdentityFile ~/.ssh/id_lw_ed25519
+	IdentityFile ~/.ssh/id_lw_rsa
 	User git
 	Port 22
 
@@ -84,7 +91,7 @@ Host git.liquidweb.com
 #	# IdentityFile ~/.ssh/id_ecdsa
 #	# IdentityFile ~/.ssh/id_dsa
 
-Host !.*hostbaitor.com !.*deleteos.com !wiki !lol !ea4 !supportdev.* *
+Host !.*hostbaitor.com !.*deleteos.com !wiki !supportdev.* * !g !git.liquidweb.com
  	User root
  	ControlPath ~/.ssh/.master-%r@%h:%p
  	ControlMaster auto
