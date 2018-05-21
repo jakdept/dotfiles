@@ -65,55 +65,12 @@
 	</data>
 	<key>NSTableView Supports v2 KeyBingingTable</key>
 	<true/>
-	<key>NSToolbar Configuration com.apple.NSColorPanel</key>
-	<dict>
-		<key>TB Is Shown</key>
-		<integer>1</integer>
-	</dict>
-	<key>NSWindow Frame NSFontPanel</key>
-	<string>1590 207 561 77 0 0 3840 2138 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>1610 1309 620 392 0 0 3840 2138 </string>
+	<string>530 476 620 392 0 0 1680 1027 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>1014 607 796 473 0 0 3840 2138 </string>
+	<string>-2149 586 796 473 -3840 0 3840 2137 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>512 352 1130 699 0 0 3840 2138 </string>
-	<key>NSWindow Frame iTerm Window 1</key>
-	<string>1681 711 1074 713 0 0 3840 2138 </string>
-	<key>NSWindow Frame iTerm Window 10</key>
-	<string>374 0 850 531 0 0 1680 1028 </string>
-	<key>NSWindow Frame iTerm Window 11</key>
-	<string>374 137 850 531 0 0 1680 1028 </string>
-	<key>NSWindow Frame iTerm Window 12</key>
-	<string>830 225 850 531 0 0 1680 1028 </string>
-	<key>NSWindow Frame iTerm Window 13</key>
-	<string>374 299 850 531 0 0 1680 1028 </string>
-	<key>NSWindow Frame iTerm Window 14</key>
-	<string>609 149 850 531 0 0 1680 1028 </string>
-	<key>NSWindow Frame iTerm Window 15</key>
-	<string>830 0 850 531 0 0 1680 1028 </string>
-	<key>NSWindow Frame iTerm Window 16</key>
-	<string>609 0 850 531 0 0 1680 1028 </string>
-	<key>NSWindow Frame iTerm Window 17</key>
-	<string>374 149 850 531 0 0 1680 1028 </string>
-	<key>NSWindow Frame iTerm Window 18</key>
-	<string>-2510 65 836 517 -3840 65 3840 2138 </string>
-	<key>NSWindow Frame iTerm Window 2</key>
-	<string>1681 -3 1074 713 0 0 3840 2138 </string>
-	<key>NSWindow Frame iTerm Window 3</key>
-	<string>-1084 104 1074 699 -3840 65 3840 2138 </string>
-	<key>NSWindow Frame iTerm Window 4</key>
-	<string>-2159 1504 1074 699 -3840 65 3840 2138 </string>
-	<key>NSWindow Frame iTerm Window 5</key>
-	<string>-2129 636 1074 713 -3840 65 3840 2138 </string>
-	<key>NSWindow Frame iTerm Window 6</key>
-	<string>-2159 1490 1074 713 -3840 65 3840 2138 </string>
-	<key>NSWindow Frame iTerm Window 7</key>
-	<string>373 497 850 531 0 0 1680 1028 </string>
-	<key>NSWindow Frame iTerm Window 8</key>
-	<string>609 0 850 531 0 0 1680 1028 </string>
-	<key>NSWindow Frame iTerm Window 9</key>
-	<string>462 279 850 531 0 0 1680 1028 </string>
+	<string>-1953 460 1130 699 -3840 0 3840 2137 </string>
 	<key>NeverWarnAboutShortLivedSessions_0064EFEA-0A54-4AEE-BF8E-89C791584744</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_0064EFEA-0A54-4AEE-BF8E-89C791584744_selection</key>
@@ -689,7 +646,7 @@
 			<key>Shortcut</key>
 			<string></string>
 			<key>Silence Bell</key>
-			<false/>
+			<true/>
 			<key>Sync Title</key>
 			<false/>
 			<key>Tags</key>
@@ -718,24 +675,16 @@
 			<string>/Users/jack</string>
 		</dict>
 	</array>
-	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
+	<key>NoSyncHaveUsedCopyMode</key>
 	<true/>
-	<key>NoSyncDoNotWarnBeforeMultilinePaste</key>
-	<true/>
-	<key>NoSyncDoNotWarnBeforeMultilinePaste_selection</key>
-	<integer>0</integer>
-	<key>NoSyncDoNotWarnBeforePastingOneLineEndingInNewlineAtShellPrompt</key>
-	<true/>
-	<key>NoSyncDoNotWarnBeforePastingOneLineEndingInNewlineAtShellPrompt_selection</key>
-	<integer>0</integer>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
-	<string>6D0A6E21-7DC4-42B9-AC8C-AA26991A03CF</string>
+	<string>D7A8E79F-C71E-4E63-A7B4-8A2A94773159</string>
 	<key>NoSyncPermissionToShowTip</key>
 	<false/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
-	<real>516938987.48295897</real>
+	<real>544601963.70997202</real>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
 	<key>PointerActions</key>
@@ -780,11 +729,11 @@
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/final.xml?shard=96</string>
+	<string>https://iterm2.com/appcasts/final.xml?shard=55</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-01-13T07:53:04Z</date>
+	<date>2018-05-09T06:43:39Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -792,7 +741,7 @@
 	<key>ShowFullScreenTabBar</key>
 	<false/>
 	<key>TabStyle</key>
-	<integer>0</integer>
+	<integer>1</integer>
 	<key>UseBorder</key>
 	<false/>
 	<key>WindowNumber</key>
@@ -806,6 +755,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.1.5</string>
+	<string>3.1.6</string>
 </dict>
 </plist>
