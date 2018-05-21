@@ -1,6 +1,6 @@
 // Place your settings in this file to overwrite the default settings
 {
-    "go.formatOnSave": true,
+    "editor.formatOnSave": true,
     "go.formatTool": "goreturns",
     "go.buildOnSave": "package",
     // Run Lint tool on save.
@@ -44,7 +44,6 @@
     "workbench.editor.enablePreview": false,
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "python.pythonPath": "python3.5",
-    "python.formatting.formatOnSave": false,
     "files.autoSave": "onFocusChange",
     "window.menuBarVisibility": "toggle",
     "git.autofetch": false,
@@ -52,10 +51,15 @@
     "workbench.colorTheme": "WarpOS",
     "markdown.preview.doubleClickToSwitchToEditor": false,
     "vim.foldfix": true,
-    "vim.otherModesKeyBindingsNonRecursive": [{
-            "before": ["Z", "Z"],
+    "vim.otherModesKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "Z",
+                "Z"
+            ],
             "after": [],
-            "commands": [{
+            "commands": [
+                {
                     "command": "workbench.action.files.save",
                     "args": []
                 },
@@ -66,64 +70,66 @@
             ]
         },
         {
-            "before": ["<C-b>"],
+            "before": [
+                "<C-b>"
+            ],
             "after": [],
-            "commands": [{
-                "command": "workbench.action.toggleSidebarVisibility",
-                "args": []
-            }]
+            "commands": [
+                {
+                    "command": "workbench.action.toggleSidebarVisibility",
+                    "args": []
+                }
+            ]
         },
         {
-            "before": ["<cmd-d>"],
+            "before": [
+                "<cmd-d>"
+            ],
             "after": [],
-            "commands": [{
-                "command": "workbench.action.files.save",
-                "args": []
-            }]
+            "commands": [
+                {
+                    "command": "workbench.action.files.save",
+                    "args": []
+                }
+            ]
         },
         {
-            "before": ["<C-s>"],
+            "before": [
+                "<C-s>"
+            ],
             "after": [],
-            "commands": [{
-                "command": "workbench.action.files.save",
-                "args": []
-            }]
+            "commands": [
+                {
+                    "command": "workbench.action.files.save",
+                    "args": []
+                }
+            ]
         },
         {
-            "before": ["<C-w>"],
+            "before": [
+                "<C-w>"
+            ],
             "after": [],
-            "commands": [{
-                "command": "workbench.action.closeActiveEditor",
-                "args": []
-            }]
+            "commands": [
+                {
+                    "command": "workbench.action.closeActiveEditor",
+                    "args": []
+                }
+            ]
         }
     ],
     "workbench.iconTheme": "material-icon-theme",
     "files.associations": {
-        "*.plist": "xml"
+        "*.plist": "xml",
+        "*.bats": "shellscript"
     },
-    "vim.disableAnnoyingNeovimMessage": true,
     "editor.minimap.enabled": false,
     "diffEditor.renderSideBySide": false,
     "editor.fontLigatures": true,
-    "gitlens.codeLens.recentChange.enabled": false,
-    "gitlens.blame.line.enabled": false,
-    "powermode.enabled": true,
-    "powermode.enableShake": false,
-    "gitlens.annotations.file.hover.wholeLine": false,
     "editor.parameterHints": false,
     "material-icon-theme.showUpdateMessage": false,
     "workbench.editor.labelFormat": "short",
     "git.enableSmartCommit": true,
-    "gitlens.advanced.messages": {
-        "suppressCommitHasNoPreviousCommitWarning": false,
-        "suppressCommitNotFoundWarning": false,
-        "suppressFileNotUnderSourceControlWarning": false,
-        "suppressGitVersionWarning": false,
-        "suppressLineUncommittedWarning": false,
-        "suppressNoRepositoryWarning": false,
-        "suppressUpdateNotice": true,
-        "suppressWelcomeNotice": false
-    },
-    "explorer.confirmDragAndDrop": false
+    "explorer.confirmDragAndDrop": false,
+    "extensions.ignoreRecommendations": false
 }
