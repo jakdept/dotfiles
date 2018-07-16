@@ -1,6 +1,6 @@
 // Place your settings in this file to overwrite the default settings
 {
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false,
     "go.formatTool": "goreturns",
     "go.buildOnSave": "package",
     // Run Lint tool on save.
@@ -32,9 +32,12 @@
     "go.coverOnSave": true,
     "go.goroot": "/usr/local/Cellar/go/1.10.1/libexec",
     "editor.rulers": [
-        80,
-        140
+        80
     ],
+    "editor.wordWrap": "on",
+    "editor.wordWrapColumn": 160,
+    "workbench.activityBar.visible": false,
+    "editor.wrappingIndent": "indent",
     "editor.fontFamily": "Hack, Menlo, Monaco, 'Courier New', monospace",
     "editor.fontSize": 12,
     "terminal.integrated.fontFamily": "Hack, Menlo, Monaco, Consolas, \"Droid Sans Mono\", \"Courier New\", monospace, \"Droid Sans Fallback\"",
@@ -47,7 +50,6 @@
     "files.autoSave": "onFocusChange",
     "window.menuBarVisibility": "toggle",
     "git.autofetch": false,
-    "editor.wordWrap": "off",
     "workbench.colorTheme": "WarpOS",
     "markdown.preview.doubleClickToSwitchToEditor": false,
     "vim.foldfix": true,
@@ -120,8 +122,7 @@
     ],
     "workbench.iconTheme": "material-icon-theme",
     "files.associations": {
-        "*.plist": "xml",
-        "*.bats": "shellscript"
+        "*.plist": "xml"
     },
     "editor.minimap.enabled": false,
     "diffEditor.renderSideBySide": false,
