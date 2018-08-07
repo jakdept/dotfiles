@@ -67,6 +67,14 @@ Host ea4 ea4.hostbaitor.com
 	User root
 	Port 22
 
+Host kvm kvm.lwkickstart.com
+	PKCS11Provider /usr/local/lib/kr-pkcs11.so
+	ProxyCommand /usr/local/bin/krssh %h %p
+	IdentityFile ~/.ssh/id_krypton
+	Hostname kvm.lwkickstart.com
+	User root
+	Port 22
+
 Host objstor objstor.hostbaitor.com
 	PKCS11Provider /usr/local/lib/kr-pkcs11.so
 	ProxyCommand /usr/local/bin/krssh %h %p
