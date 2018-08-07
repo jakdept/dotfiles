@@ -9,6 +9,7 @@
     "go.lintTool": "gometalinter",
     // https://github.com/alecthomas/gometalinter#supported-linters
     "go.lintFlags": [
+        "-j 1", // limit concurrency
         "--disable-all",
         "--enable=vet",
         // "--enable=deadcode",
