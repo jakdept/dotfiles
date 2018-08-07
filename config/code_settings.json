@@ -132,5 +132,9 @@
     "workbench.editor.labelFormat": "short",
     "git.enableSmartCommit": true,
     "explorer.confirmDragAndDrop": false,
-    "extensions.ignoreRecommendations": false
+    "extensions.ignoreRecommendations": false,
+    "gitlens.advanced.messages": {
+        "suppressShowKeyBindingsNotice": true
+    },
+    "gitlab.instanceUrl": "https://git.liquidweb.com"
 }
