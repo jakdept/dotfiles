@@ -30,6 +30,8 @@
 	prompt = false
 [url "git@git.liquidweb.com:"]
 	insteadOf = https://git.liquidweb.com/
+[url "git@github.com:"]
+	insteadOf = https://github.com/
 [core]
 	excludesfile = ~/.gitignore
 	editor = vim
