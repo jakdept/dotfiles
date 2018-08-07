@@ -1,0 +1,15 @@
+#!/bin/bash
+if [[ $1 == "enter" ]]; then
+	docker run -it --rm \
+		-v $HOME/Downloads:$HOME/Downloads \
+		jakdept/supermicro /bin/bash
+elif [[ $1 == "--banner" ]]; then
+	shift
+	docker run -it --rm \
+		-v $HOME/Downloads:$HOME/Downloads \
+		jakdept/supermicro sum "$@"
+else
+	docker run -it --rm \
+		-v $HOME/Downloads:$HOME/Downloads \
+		jakdept/supermicro sum --no_banner "$@"
+fi
