@@ -1,6 +1,6 @@
 // Place your settings in this file to overwrite the default settings
 {
-    "editor.formatOnSave": false,
+    "editor.formatOnSave": true,
     "go.formatTool": "goreturns",
     "go.buildOnSave": "package",
     // Run Lint tool on save.
